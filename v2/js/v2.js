@@ -1,4 +1,4 @@
-import { lashMapSVG } from "../../js/lashes.js";
+import { lashMapSVG, EyeRenderer } from "../../js/lashes.js";
 
 // Скрытые стартовые состояния включаются, только если скрипты загрузились.
 document.documentElement.classList.add("js");
@@ -10,6 +10,41 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 document.querySelectorAll("[data-lashmap]").forEach((el) => {
   el.innerHTML = lashMapSVG(el.dataset.lashmap);
 });
+
+/* Живой стикер в hero: медленный цикл наращивания (или своё видео) */
+const loopCanvas = document.querySelector("[data-eye-loop]");
+const heroVideo = document.querySelector("[data-hero-video]");
+if (heroVideo) {
+  heroVideo.playbackRate = 0.6;
+  if (loopCanvas) loopCanvas.hidden = true;
+} else if (loopCanvas) {
+  const eye = new EyeRenderer(loopCanvas, { tweezers: true, progress: reduceMotion ? 1 : 0 });
+  new ResizeObserver(() => eye.resize()).observe(loopCanvas);
+  if (!reduceMotion) {
+    const RUN = 16000; // мс на сборку
+    const HOLD = 3500; // мс любуемся результатом
+    let t0 = performance.now();
+    let visible = true;
+    new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(loopCanvas);
+    const tick = (now) => {
+      if (visible && !document.hidden) {
+        let t = now - t0;
+        if (t > RUN + HOLD) {
+          t0 = now;
+          t = 0;
+        }
+        const k = Math.min(1, t / RUN);
+        const p = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        eye.render(p);
+        loopCanvas.style.opacity = t > RUN + HOLD - 600 ? String((RUN + HOLD - t) / 600) : t < 500 ? String(t / 500) : "1";
+      } else {
+        t0 += 16;
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+}
 
 /* Появления по прокрутке */
 const reveals = [...document.querySelectorAll("[data-reveal], .reveal")];

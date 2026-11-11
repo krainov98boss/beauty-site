@@ -39,7 +39,8 @@
         <li><a href="#about">Обо мне</a></li>
         <li><a href="#style">Мой стиль</a></li>
         <li><a href="#reviews">Отзывы</a></li>
-        <li><a href="#packages">Пакеты</a></li>
+        <li><a href="#studio">Студия</a></li>
+        <li><a href="#price">Прайс</a></li>
         <li><a href="#zapis">Контакты</a></li>
       </ul>
     </nav>
@@ -59,8 +60,11 @@
         <a class="pill pill--cursor reveal" style="--d:0.6s" href="#zapis">Записаться<svg class="pill__cursor" aria-hidden="true"><use href="#i-cursor"/></svg></a>
       </div>
       <figure class="hero__sticker" data-parallax="-40">
-        <div class="sticker-cut">
-          <img src="../assets/img/eye-after.png" width="920" height="478" alt="Иллюстрация: закрытый глаз с пышными тёмными нарощенными ресницами">
+        <div class="sticker-cut sticker-cut--live">
+          <img class="sticker-cut__still" src="../assets/img/eye-after.png" width="920" height="478" alt="">
+          <canvas class="sticker-cut__live" data-eye-loop role="img" aria-label="Анимация: на закрытом глазу медленно наращиваются ресницы — по одной, длиннее, пышнее и темнее"></canvas>
+          <!-- Своё видео: положите файл в v2/assets/video/hero.mp4 и раскомментируйте строку ниже.
+          <video class="sticker-cut__video" data-hero-video src="assets/video/hero.mp4" autoplay muted loop playsinline></video> -->
         </div>
         <svg class="hero__bow hero__bow--a" aria-hidden="true"><use href="#i-bow"/></svg>
         <svg class="hero__bow hero__bow--b" aria-hidden="true"><use href="#i-bow"/></svg>
@@ -134,6 +138,19 @@
       </div>
     </section>
 
+    <!-- Студия -->
+    <section class="studio stripes" id="studio" aria-labelledby="studio-title">
+      <h2 class="band-title" id="studio-title">Моя студия</h2>
+      <p class="studio__lead">Тёплый свет, мягкое кресло и&nbsp;кофе, пока ждёшь.</p>
+      <div class="studio__wall" data-progress>
+        <figure class="snap snap--tall" style="--r:-3deg;--s:-60"><img src="assets/studio/studio-1.jpg" width="1100" height="1467" alt="Рабочее место: большое круглое зеркало, кольцевая лампа и стол с материалами" loading="lazy"><figcaption>свет как днём</figcaption></figure>
+        <figure class="snap snap--arch" style="--r:2deg;--s:40"><img src="assets/studio/studio-2.jpg" width="1100" height="1467" alt="Уголок для гостей: кофе, сладости, ваза с сухоцветами и гирлянда" loading="lazy"><figcaption>кофе, пока ждёшь</figcaption></figure>
+        <figure class="snap" style="--r:4deg;--s:-30"><img src="assets/studio/studio-3.jpg" width="1100" height="1467" alt="Сухоцветы в белой вазе и аромадиффузор у зеркала" loading="lazy"><figcaption>уют в&nbsp;деталях</figcaption></figure>
+        <figure class="snap snap--wide" style="--r:-2deg;--s:70"><img src="assets/studio/studio-4.jpg" width="1100" height="1467" alt="Кушетка, лампа-полумесяц и столик с ресницами и инструментами" loading="lazy"><figcaption>здесь ты отдыхаешь</figcaption></figure>
+        <svg class="studio__bow" aria-hidden="true"><use href="#i-bow"/></svg>
+      </div>
+    </section>
+
     <!-- Как проходит -->
     <section class="steps stripes stripes--soft" aria-labelledby="steps-title">
       <div class="steps__inner">
@@ -174,7 +191,7 @@
           <p class="pkg__name">Классика</p>
           <p class="pkg__desc">Для тех, кто хочет естественный взгляд, как будто свои — только лучше.</p>
           <ul class="pkg__list"><li>Одна ресничка на одну свою</li><li>Длина 8–11&nbsp;мм</li><li>Подбор изгиба и&nbsp;формы</li></ul>
-          <a class="price" href="#zapis" data-effect="Классика">От <span class="stub">[цена]</span>&nbsp;₽</a>
+          <a class="price" href="#zapis" data-effect="Классика">2100&nbsp;₽</a>
         </div>
         <div class="collage">
           <figure class="clip" style="--x:4%;--y:6%;--r:-6deg;--i:0" data-lashmap="classic"></figure>
@@ -187,10 +204,10 @@
       <article class="pkg pkg--flip" data-progress>
         <div class="pkg__text">
           <h3 class="pkg__num">Пакет 02</h3>
-          <p class="pkg__name">Объём 2D–3D</p>
+          <p class="pkg__name">Объём 1,5D–4D</p>
           <p class="pkg__desc">Для тех, кто любит пышно и&nbsp;выразительно.</p>
-          <ul class="pkg__list"><li>Веер из 2–3 ресничек</li><li>Мокрый, лисий или кукольный эффект</li><li>Длина 9–12&nbsp;мм</li></ul>
-          <a class="price" href="#zapis" data-effect="3D">От <span class="stub">[цена]</span>&nbsp;₽</a>
+          <ul class="pkg__list"><li>Объём от 1,5D до 4D</li><li>Мокрый и трендовые эффекты</li><li>Длина 9–12&nbsp;мм</li></ul>
+          <a class="price" href="#zapis" data-effect="Объём 2D">От 2200&nbsp;₽</a>
         </div>
         <div class="collage">
           <figure class="clip" style="--x:44%;--y:4%;--r:6deg;--i:0" data-lashmap="3d"></figure>
@@ -203,11 +220,36 @@
         <div class="pkg__text">
           <h3 class="pkg__num">Пакет 03</h3>
           <p class="pkg__name">Уход</p>
-          <ul class="pkg__list pkg__list--row"><li>Коррекция через <span class="nowrap">3–4 недели</span></li><li>Бережное снятие</li></ul>
-          <a class="price" href="#zapis" data-effect="Коррекция">От <span class="stub">[цена]</span>&nbsp;₽</a>
+          <ul class="pkg__list pkg__list--row"><li>Коррекция — 1500&nbsp;₽</li><li>Снятие — 400&nbsp;₽</li><li>Снятие чужой работы перед наращиванием — 300&nbsp;₽</li></ul>
+          <a class="price" href="#zapis" data-effect="Коррекция">От 400&nbsp;₽</a>
         </div>
       </article>
-      <p class="packages__stub"><span class="stub">[проверить список услуг и цены]</span></p>
+      <p class="packages__stub"><a href="#price">Весь прайс-лист</a></p>
+    </section>
+
+    <!-- Прайс -->
+    <section class="price-list" id="price" aria-labelledby="price-title" data-reveal="menu">
+      <div class="menu">
+        <svg class="menu__bow" aria-hidden="true"><use href="#i-bow"/></svg>
+        <h2 class="menu__title" id="price-title">Прайс-лист</h2>
+        <p class="menu__sub">наращивание ресниц</p>
+        <dl class="menu__list">
+          <div class="menu__row"><dt>Классика <small>1D</small></dt><dd>2100 ₽</dd></div>
+          <div class="menu__row"><dt>Объём 1,5D <small>1–1,5 часа</small></dt><dd>2200 ₽</dd></div>
+          <div class="menu__row"><dt>Объём 2D <small>1,5–2 часа</small></dt><dd>2300 ₽</dd></div>
+          <div class="menu__row"><dt>Объём 3D <small>1,5–2 часа</small></dt><dd>2500 ₽</dd></div>
+          <div class="menu__row"><dt>Объём 4D <small>2–2,5 часа</small></dt><dd>2700 ₽</dd></div>
+          <div class="menu__row"><dt>Мокрый эффект</dt><dd>2500 ₽</dd></div>
+          <div class="menu__row menu__row--hit"><dt>Трендовые эффекты <small>стрелка, рваный, лучи, аниме, эффект накладных или накрашенных ресниц, медуза и другие эффекты любой сложности</small></dt><dd>2600 ₽</dd></div>
+          <div class="menu__row"><dt>Уголки, лучи без основы</dt><dd>1900 ₽</dd></div>
+          <div class="menu__row menu__row--add"><dt>Цветные ресницы, стразы</dt><dd>+200 ₽</dd></div>
+          <div class="menu__row menu__row--add"><dt>Коричневые ресницы</dt><dd>без доплат</dd></div>
+          <div class="menu__row"><dt>Коррекция ресниц</dt><dd>1500 ₽</dd></div>
+          <div class="menu__row"><dt>Снятие ресниц другого мастера <small>с последующим наращиванием</small></dt><dd>300 ₽</dd></div>
+          <div class="menu__row"><dt>Снятие ресниц</dt><dd>400 ₽</dd></div>
+        </dl>
+        <a class="pill" href="#zapis">Записаться</a>
+      </div>
     </section>
 
     <!-- Запись -->
@@ -225,7 +267,7 @@
           <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="given-name" required placeholder="Как тебя зовут"><p class="field__error" id="f-name-err" hidden>Напиши, пожалуйста, имя</p></div>
           <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 900 000-00-00"><p class="field__error" id="f-phone-err" hidden>Проверь номер: нужно хотя бы 10 цифр</p></div>
           <div class="field"><label for="f-effect">Пакет</label>
-            <select id="f-effect" name="effect"><option>Ещё не знаю</option><option>Классика</option><option>2D</option><option>3D</option><option>Коррекция</option><option>Снятие</option></select>
+            <select id="f-effect" name="effect"><option>Ещё не знаю</option><option>Классика</option><option>Объём 1,5D</option><option>Объём 2D</option><option>Объём 3D</option><option>Объём 4D</option><option>Мокрый эффект</option><option>Трендовые эффекты</option><option>Уголки, лучи</option><option>Коррекция</option><option>Снятие</option></select>
           </div>
           <button class="pill pill--wide" type="submit"><span class="form__label">Отправить заявку</span></button>
           <p class="form__legal">Нажимая кнопку, ты соглашаешься на обработку персональных данных. <a href="#" data-stub="policy">[Политика]</a></p>
