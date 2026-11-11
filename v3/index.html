@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Наращивание ресниц — меню услуг</title>
+  <meta name="description" content="Наращивание ресниц: классика, объём 1,5D–4D, мокрый и трендовые эффекты. Прайс, работы и запись.">
+  <meta name="theme-color" content="#f3eee6">
+  <link rel="preload" href="fonts/oranienbaum-cyr.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-cyr.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/v3.css">
+  <script type="module" src="js/v3.js"></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 1c.6 6.4 4.6 10.4 11 11-6.4.6-10.4 4.6-11 11-.6-6.4-4.6-10.4-11-11C7.4 11.4 11.4 7.4 12 1Z" fill="currentColor"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-vk" viewBox="0 0 24 24"><path d="M3 7h3.2c.5 3.6 2.2 5.6 3.4 6V7h3v3.6c1.3-.2 2.6-1.7 3.1-3.6h2.9c-.5 2.4-2.1 4.2-3.4 4.9 1.3.6 3.2 2.1 3.9 5.1h-3.2c-.6-1.9-2.1-3.3-3.3-3.5V17h-.4C6.1 17 3.3 13.4 3 7Z" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.8 3h2.9l1.5 4-2 1.4a12 12 0 0 0 6.4 6.4l1.4-2 4 1.5v2.9a2 2 0 0 1-2.2 2A17 17 0 0 1 4.8 5.2 2 2 0 0 1 6.8 3Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="9.8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip" href="#zapis">Перейти к записи</a>
+
+  <header class="nav" data-nav>
+    <a class="nav__logo" href="#top">Lash<span>·</span>menu</a>
+    <nav aria-label="Разделы">
+      <ul class="nav__links">
+        <li><a href="#master">Мастер</a></li>
+        <li><a href="#menu">Меню услуг</a></li>
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#studio">Студия</a></li>
+      </ul>
+    </nav>
+    <a class="nav__cta" href="#zapis">Записаться</a>
+  </header>
+
+  <main id="top">
+    <!-- 1. Обложка: пролёт сквозь заголовок -->
+    <section class="cover" data-scene="cover" aria-labelledby="cover-title">
+      <div class="cover__stage">
+        <p class="cover__side cover__side--l" aria-hidden="true">красота<br>забота<br>эстетика<br>взгляд</p>
+        <h1 class="cover__title" id="cover-title"><span class="cover__line">Меню</span> <span class="cover__line cover__line--2">ресниц</span></h1>
+        <p class="cover__sub">наращивание ресниц</p>
+        <div class="cover__media">
+          <video src="../v2/assets/video/hero.mp4" poster="../v2/assets/video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" data-slow aria-label="Видео: ресницы после наращивания крупным планом"></video>
+          <p class="cover__script script">Ваш взгляд —<br>моя забота</p>
+        </div>
+        <p class="cover__tagline">Профессиональный уход<br>для вашего взгляда</p>
+        <svg class="cover__star" aria-hidden="true"><use href="#i-star"/></svg>
+        <div class="cover__cards" aria-hidden="true">
+          <figure class="fly fly--a"><img src="../v2/assets/works/work-2.jpg" alt=""></figure>
+          <figure class="fly fly--b"><img src="../v2/assets/works/work-8.jpg" alt=""></figure>
+          <figure class="fly fly--c"><img src="../v2/assets/works/work-5.jpg" alt=""></figure>
+        </div>
+        <p class="cover__hint" aria-hidden="true">листайте</p>
+      </div>
+    </section>
+
+    <!-- 2. Мастер: разворот проявляется из размытия -->
+    <section class="spread" id="master" data-scene="master" aria-labelledby="master-title">
+      <div class="spread__stage">
+        <figure class="spread__photo">
+          <img src="../v2/assets/master/master.jpg" width="900" height="1125" alt="Мастер по наращиванию ресниц" loading="lazy">
+          <figcaption class="script">Эстетика<br>в деталях</figcaption>
+        </figure>
+        <div class="spread__text">
+          <h2 class="h2 blur-in" id="master-title">Привет,<br>я <span class="stub">[Имя]</span></h2>
+          <p class="spread__lead blur-in">Наращиваю ресницы так, чтобы по утрам вам не нужно было ничего делать. Поресничная работа, форма под ваши глаза.</p>
+          <ul class="facts blur-in">
+            <li><span>опыт</span><b class="stub">[лет]</b></li>
+            <li><span>город</span><b class="stub">[город]</b></li>
+            <li><span>материалы</span><b class="stub">[бренды]</b></li>
+          </ul>
+          <p class="social blur-in"><a href="https://www.instagram.com/iulyaa_lashnn/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@iulyaa_lashnn</a><a href="https://vk.ru/resnichki_nnovgorod" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-vk"/></svg>resnichki_nnovgorod</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Меню услуг: страницы разворачиваются в 3D по горизонтали -->
+    <section class="menu" id="menu" data-scene="menu" aria-labelledby="menu-title">
+      <div class="menu__stage">
+        <div class="menu__head">
+          <h2 class="h2" id="menu-title">Меню услуг</h2>
+          <p>Цены в рублях. Длительность указана примерно.</p>
+        </div>
+        <div class="menu__track" data-track>
+          <article class="page" style="--i:0">
+            <div class="page__body">
+              <p class="num">01</p>
+              <h3 class="page__title">Наращивание</h3>
+              <dl class="list">
+                <div><dt>Классика (1D)</dt><dd>2 100 ₽</dd></div>
+                <div><dt>Объём 1,5D <small>1–1,5 ч</small></dt><dd>2 200 ₽</dd></div>
+                <div><dt>Объём 2D <small>1,5–2 ч</small></dt><dd>2 300 ₽</dd></div>
+                <div><dt>Объём 3D <small>1,5–2 ч</small></dt><dd>2 500 ₽</dd></div>
+                <div><dt>Объём 4D <small>2–2,5 ч</small></dt><dd>2 700 ₽</dd></div>
+              </dl>
+              <p class="page__note">Форму, длину и изгиб подбираем под ваши глаза.</p>
+            </div>
+            <figure class="page__photo"><img src="../v2/assets/works/work-10.jpg" alt="Натуральное наращивание в коричневом цвете" loading="lazy"><figcaption class="script">Естественная<br>красота</figcaption></figure>
+          </article>
+          <article class="page" style="--i:1">
+            <div class="page__body">
+              <p class="num">02</p>
+              <h3 class="page__title">Эффекты</h3>
+              <dl class="list">
+                <div><dt>Мокрый эффект</dt><dd>2 500 ₽</dd></div>
+                <div><dt>Трендовые эффекты <small>стрелка, рваный, лучи, аниме, накладные, накрашенные, медуза и другие любой сложности</small></dt><dd>2 600 ₽</dd></div>
+                <div><dt>Уголки, лучи без основы</dt><dd>1 900 ₽</dd></div>
+              </dl>
+              <p class="page__note">Сложный эффект — по фото, которое вам нравится.</p>
+            </div>
+            <figure class="page__photo"><img src="../v2/assets/works/work-3.jpg" alt="Эффект «Аниме» с белыми вставками" loading="lazy"><figcaption class="script">Гармония<br>в каждой черте</figcaption></figure>
+          </article>
+          <article class="page" style="--i:2">
+            <div class="page__body">
+              <p class="num">03</p>
+              <h3 class="page__title">Дополнительно</h3>
+              <dl class="list">
+                <div><dt>Цветные ресницы, стразы</dt><dd>+200 ₽</dd></div>
+                <div><dt>Коричневые ресницы</dt><dd>без доплат</dd></div>
+              </dl>
+              <p class="page__note">Мягкий коричневый — для самого естественного взгляда.</p>
+            </div>
+            <figure class="page__photo"><img src="../v2/assets/works/work-1.jpg" alt="Стрелочка в цвете мокко" loading="lazy"><figcaption class="script">Цвет —<br>мокко</figcaption></figure>
+          </article>
+          <article class="page" style="--i:3">
+            <div class="page__body">
+              <p class="num">04</p>
+              <h3 class="page__title">Уход</h3>
+              <dl class="list">
+                <div><dt>Коррекция ресниц</dt><dd>1 500 ₽</dd></div>
+                <div><dt>Снятие работы другого мастера <small>с последующим наращиванием</small></dt><dd>300 ₽</dd></div>
+                <div><dt>Снятие ресниц</dt><dd>400 ₽</dd></div>
+              </dl>
+              <p class="page__note">Коррекция — раз в 3–4 недели.</p>
+            </div>
+            <figure class="page__photo"><img src="../v2/assets/works/work-7.jpg" alt="Объёмное наращивание" loading="lazy"><figcaption class="script">Позаботьтесь<br>о себе</figcaption></figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Работы: колода снимков раскладывается -->
+    <section class="works" id="works" data-scene="works" aria-labelledby="works-title">
+      <div class="works__stage">
+        <h2 class="h2 works__title" id="works-title">Работы</h2>
+        <p class="works__lead">Снято в студии, без фильтров на ресницах. Больше — в <a href="https://www.instagram.com/iulyaa_lashnn/" target="_blank" rel="noopener">Instagram</a>.</p>
+        <ul class="deck">
+          <li style="--i:0;--x:-118%;--y:-14%;--r:-8deg"><img src="../v2/assets/works/work-6.jpg" alt="Лучики с удлинением к внешнему углу" loading="lazy"></li>
+          <li style="--i:1;--x:-40%;--y:-30%;--r:4deg"><img src="../v2/assets/works/work-4.jpg" alt="Ресницы в профиль" loading="lazy"></li>
+          <li style="--i:2;--x:40%;--y:-22%;--r:-3deg"><video src="../v2/assets/works/work-video.mp4" poster="../v2/assets/works/work-video-poster.jpg" muted loop playsinline autoplay preload="none" data-slow aria-label="Видео работы крупным планом"></video></li>
+          <li style="--i:3;--x:118%;--y:-10%;--r:7deg"><img src="../v2/assets/works/work-9.jpg" alt="Ресницы крупным планом" loading="lazy"></li>
+          <li style="--i:4;--x:-80%;--y:44%;--r:5deg"><img src="../v2/assets/works/work-2.jpg" alt="Пушистые объёмные ресницы на карих глазах" loading="lazy"></li>
+          <li style="--i:5;--x:0%;--y:40%;--r:-5deg"><img src="../v2/assets/works/work-8.jpg" alt="Мокрый эффект с длинными лучами" loading="lazy"></li>
+          <li style="--i:6;--x:80%;--y:46%;--r:3deg"><img src="../v2/assets/works/work-5.jpg" alt="M-изгиб, 2D-объём" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Студия: арка и снимки выезжают по сторонам -->
+    <section class="studio" id="studio" data-scene="studio" aria-labelledby="studio-title">
+      <div class="studio__stage">
+        <figure class="arch"><img src="../v2/assets/studio/studio-2.jpg" alt="Уголок для гостей: кофе, сладости, сухоцветы и гирлянда" loading="lazy"></figure>
+        <div class="studio__text">
+          <h2 class="h2 blur-in" id="studio-title">Студия</h2>
+          <p class="blur-in">Тёплый свет, мягкое кресло и кофе, пока ждёте. Здесь вы просто отдыхаете.</p>
+        </div>
+        <figure class="side side--l"><img src="../v2/assets/studio/studio-1.jpg" alt="Рабочее место с круглым зеркалом и кольцевой лампой" loading="lazy"></figure>
+        <figure class="side side--r"><img src="../v2/assets/studio/studio-4.jpg" alt="Кушетка и лампа-полумесяц" loading="lazy"></figure>
+        <figure class="side side--b"><img src="../v2/assets/studio/studio-3.jpg" alt="Сухоцветы в белой вазе и аромадиффузор" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- 6. Контакты и запись -->
+    <section class="contact" id="zapis" aria-labelledby="contact-title">
+      <div class="card blur-in">
+        <div class="card__info">
+          <h2 class="h2" id="contact-title">Контакты<br>и запись</h2>
+          <ul class="card__list">
+            <li><svg aria-hidden="true"><use href="#i-ig"/></svg><a href="https://www.instagram.com/iulyaa_lashnn/" target="_blank" rel="noopener">@iulyaa_lashnn</a></li>
+            <li><svg aria-hidden="true"><use href="#i-vk"/></svg><a href="https://vk.ru/resnichki_nnovgorod" target="_blank" rel="noopener">vk.ru/resnichki_nnovgorod</a></li>
+            <li><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="stub">[телефон]</span></li>
+            <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="stub">[адрес]</span></li>
+            <li><svg aria-hidden="true"><use href="#i-clock"/></svg><span class="stub">[график]</span></li>
+          </ul>
+        </div>
+        <form class="form" data-form novalidate data-endpoint="">
+          <div class="form__body">
+            <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="given-name" required><p class="field__error" id="f-name-err" hidden>Напишите, пожалуйста, имя</p></div>
+            <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7"><p class="field__error" id="f-phone-err" hidden>Проверьте номер: нужно хотя бы 10 цифр</p></div>
+            <div class="field"><label for="f-service">Услуга</label>
+              <select id="f-service" name="service"><option>Ещё не решила</option><option>Классика (1D)</option><option>Объём 1,5D</option><option>Объём 2D</option><option>Объём 3D</option><option>Объём 4D</option><option>Мокрый эффект</option><option>Трендовые эффекты</option><option>Уголки, лучи</option><option>Коррекция</option><option>Снятие</option></select>
+            </div>
+            <button class="btn" type="submit"><span class="btn__label">Отправить заявку</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form__legal">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. <a href="#" data-stub="policy">[Политика]</a></p>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
+          <div class="form__done" hidden tabindex="-1"><svg aria-hidden="true"><use href="#i-star"/></svg><p class="form__done-title">Заявка у меня</p><p>Скоро напишу, чтобы подобрать время.</p></div>
+        </form>
+        <figure class="card__photo"><img src="../v2/assets/studio/studio-3.jpg" alt="" loading="lazy"><figcaption class="script">Красота ближе,<br>чем вы думаете</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="nav__logo">Lash<span>·</span>menu</p>
+    <p class="footer__links"><a href="https://www.instagram.com/iulyaa_lashnn/" target="_blank" rel="noopener">Instagram</a><a href="https://vk.ru/resnichki_nnovgorod" target="_blank" rel="noopener">ВКонтакте</a></p>
+    <p>© 2026 <span class="stub">[Имя мастера]</span></p>
+  </footer>
+</body>
+</html>
