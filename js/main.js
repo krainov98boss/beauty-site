@@ -1,4 +1,7 @@
-import { EyeRenderer, STAGES, stageState, lashMapSVG } from "./lashes.js";
+import { EyeRenderer, STAGES, stageState } from "./lashes.js";
+
+// Скрытые стартовые состояния анимаций включаются, только если скрипты загрузились.
+document.documentElement.classList.add("js");
 
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -30,11 +33,11 @@ const WINDOWS = {
 };
 // Где стоит карточка подсказки (условные координаты сцены 1000 × 600).
 const PLACE = {
-  natural: { x: 150, y: 470 },
-  isolation: { x: 140, y: 560 },
-  length: { x: 905, y: 470 },
-  volume: { x: 860, y: 590 },
-  color: { x: 200, y: 600 },
+  natural: { x: 250, y: 470 },
+  isolation: { x: 245, y: 530 },
+  length: { x: 790, y: 500 },
+  volume: { x: 770, y: 450 },
+  color: { x: 265, y: 545 },
 };
 
 const eye = canvas ? new EyeRenderer(canvas, { tweezers: true }) : null;
@@ -90,7 +93,7 @@ function updateHero() {
     // не выходить за края экрана
     const minX = stageRect.left - sceneRect.left + 16;
     const maxX = stageRect.right - sceneRect.left - w - 16;
-    const maxY = stageRect.bottom - sceneRect.top - h - 12;
+    const maxY = sceneRect.height - h - 4;
     x = clamp(x, minX, maxX);
     y = Math.min(y, maxY);
     c.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
@@ -151,12 +154,6 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
   );
   reveals.forEach((el) => io.observe(el));
 }
-
-/* ---------- Схемы эффектов ---------- */
-
-document.querySelectorAll("[data-lashmap]").forEach((el) => {
-  el.innerHTML = lashMapSVG(el.dataset.lashmap);
-});
 
 /* ---------- До и после ---------- */
 
@@ -238,9 +235,10 @@ if (form) {
         });
         if (!res.ok) throw new Error(String(res.status));
       } else {
-        // Отправка ещё не подключена (см. README): показываем успешное состояние.
-        await new Promise((r) => setTimeout(r, 700));
-        console.info("Заявка (отправка не подключена):", data);
+        // Отправка ещё не подключена (см. README): честно говорим об этом.
+        await new Promise((r) => setTimeout(r, 400));
+        status.textContent = "Онлайн-заявки пока не подключены. Напиши в Telegram или позвони — контакты рядом.";
+        return;
       }
       body.hidden = true;
       done.hidden = false;
@@ -253,6 +251,17 @@ if (form) {
     }
   });
 }
+
+/* ---------- Папки цен: запись с выбранной услугой ---------- */
+
+document.querySelectorAll("[data-effect]").forEach((a) => {
+  a.addEventListener("click", () => {
+    const select = form?.elements.effect;
+    if (!select) return;
+    const option = [...select.options].find((o) => o.text === a.dataset.effect);
+    if (option) select.value = option.value;
+  });
+});
 
 /* ---------- Цикл ---------- */
 

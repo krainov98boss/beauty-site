@@ -53,7 +53,6 @@ function readPalette() {
     skin: get("--skin"),
     skinShade: get("--skin-shade"),
     skinLine: get("--skin-line"),
-    brow: get("--brow"),
     patch: get("--patch"),
     patchLine: get("--patch-line"),
     lashLight: get("--lash-light"),
@@ -80,12 +79,6 @@ const CREASE = [
   { x: 690, y: 112 },
   { x: 832, y: 218 },
 ];
-const BROW = [
-  { x: 170, y: 118 },
-  { x: 360, y: 44 },
-  { x: 640, y: 34 },
-  { x: 860, y: 112 },
-];
 const PATCH_BOTTOM = [
   { x: 214, y: 300 },
   { x: 330, y: 560 },
@@ -94,7 +87,7 @@ const PATCH_BOTTOM = [
 ];
 const MM = 11.5; // условных единиц в миллиметре
 // Рамка, которую вписываем в холст (лишнее по краям — только растушёванная кожа).
-const VIEW = { x: 110, y: 8, w: 780, h: 580 };
+const VIEW = { x: 90, y: 96, w: 920, h: 478 };
 
 function lashFrame(t) {
   const p = cubic(LASH_LINE, t);
@@ -252,7 +245,6 @@ export class EyeRenderer {
     ctx.scale(this.scale, this.scale);
 
     this.drawSkin();
-    this.drawBrow();
     this.drawLid();
     this.drawPatch();
 
@@ -278,8 +270,8 @@ export class EyeRenderer {
   drawSkin() {
     const { ctx, pal } = this;
     ctx.save();
-    ctx.translate(500, 300);
-    ctx.scale(1, 0.6);
+    ctx.translate(500, 335);
+    ctx.scale(1, 0.48);
     const g = ctx.createRadialGradient(0, 0, 40, 0, 0, 500);
     g.addColorStop(0, rgba(pal.skin, 1));
     g.addColorStop(0.5, rgba(pal.skin, 0.9));
@@ -289,30 +281,6 @@ export class EyeRenderer {
     ctx.arc(0, 0, 500, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
-  }
-
-  drawBrow() {
-    const { ctx, pal } = this;
-    const r = rng(19);
-    ctx.lineCap = "round";
-    for (let i = 0; i < 210; i++) {
-      const t = r();
-      const p = cubic(BROW, t);
-      const tan = norm(cubicD(BROW, t));
-      const thick = lerp(26, 6, Math.pow(t, 1.4));
-      const off = (r() - 0.5) * thick;
-      const up = t < 0.25 ? -0.9 : -0.25;
-      const d = norm({ x: tan.x + 0.05, y: tan.y + up * (1 - t) });
-      const len = lerp(26, 14, t) * (0.7 + r() * 0.5);
-      const x = p.x - tan.y * off;
-      const y = p.y + tan.x * off;
-      ctx.strokeStyle = rgba(pal.brow, 0.28 + r() * 0.3);
-      ctx.lineWidth = 1.6 + r() * 0.8;
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.quadraticCurveTo(x + d.x * len * 0.5 + 2, y + d.y * len * 0.5 - 2, x + d.x * len, y + d.y * len);
-      ctx.stroke();
-    }
   }
 
   drawLid() {
@@ -453,9 +421,9 @@ export class EyeRenderer {
     const perp = { x: -dir.y, y: dir.x };
     const g = ctx.createLinearGradient(tip.x, tip.y, end.x, end.y);
     g.addColorStop(0, rgba(pal.gold, fade));
-    g.addColorStop(0.35, rgba(pal.goldLight, fade));
-    g.addColorStop(0.6, rgba(pal.gold, fade * 0.8));
-    g.addColorStop(0.85, rgba(pal.gold, 0));
+    g.addColorStop(0.28, rgba(pal.goldLight, fade));
+    g.addColorStop(0.5, rgba(pal.gold, fade * 0.6));
+    g.addColorStop(0.68, rgba(pal.gold, 0));
     ctx.fillStyle = g;
     for (const sgn of [-1, 1]) {
       ctx.beginPath();
@@ -513,64 +481,95 @@ export class EyeRenderer {
   }
 }
 
-/* ---------- Схемы эффектов (SVG) ---------- */
-
+/* ---------- Схемы эффектов (SVG, «лэш-мэппинг») ---------- */
+// Длины в мм по положению t (0 — внутренний угол, 1 — внешний).
 const MAPS = {
-  classic: { lens: (t) => 8 + 2.5 * smooth(t), fibers: 1, spread: 0 },
-  "2d": { lens: (t) => 8 + 3 * smooth(t), fibers: 2, spread: 0.12 },
-  "3d": { lens: (t) => 8.5 + 3 * smooth(t), fibers: 3, spread: 0.16 },
-  wet: { lens: (t) => 8 + 3 * smooth(t), fibers: 1, spread: 0, wet: true },
-  fox: { lens: (t) => 7 + 6 * Math.pow(t, 1.8), fibers: 2, spread: 0.1 },
-  doll: { lens: (t) => 8 + 4 * Math.sin(Math.PI * t), fibers: 2, spread: 0.1 },
+  classic: { mm: (t) => 8 + 3 * smooth(t), fibers: 1, spread: 0, width: 2,
+    note: { text: "по одной", t: 0.5 } },
+  "2d": { mm: (t) => 9 + 2.4 * smooth(t), fibers: 2, spread: 0.15, width: 1.7,
+    note: { text: "по 2 в пучке", t: 0.62 } },
+  "3d": { mm: (t) => 9 + 3 * smooth(t), fibers: 3, spread: 0.2, width: 1.6, count: 30,
+    note: { text: "по 3 — пышно", t: 0.55 } },
+  wet: { mm: (t) => 8 + 3.4 * smooth(t), fibers: 1, spread: 0, width: 1.4, wet: 3,
+    note: { text: "лучики", t: 0.66 } },
+  fox: { mm: (t) => 6 + 7.5 * Math.pow(t, 2.1), fibers: 2, spread: 0.12, width: 1.8, tilt: 0.45,
+    note: { text: "длиннее здесь", t: 0.93 } },
+  doll: { mm: (t) => 7.5 + 5.5 * Math.pow(Math.sin(Math.PI * t), 1.6), fibers: 2, spread: 0.12, width: 1.8,
+    note: { text: "длиннее в центре", t: 0.5 } },
 };
 
-function polyString(base, dir, len, width, curl, side) {
-  const pts = [];
-  const ctx = {
-    moveTo: (x, y) => pts.push([x, y]),
-    lineTo: (x, y) => pts.push([x, y]),
-    closePath: () => {},
-  };
+const pts = (base, dir, len, width, curl, side) => {
+  const out = [];
+  const ctx = { moveTo: (x, y) => out.push([x, y]), lineTo: (x, y) => out.push([x, y]), closePath() {} };
   lashPath(ctx, base, dir, len, width, curl, side);
-  return pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-}
+  return out.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+};
 
 export function lashMapSVG(type) {
   const m = MAPS[type] || MAPS.classic;
   const line = [
-    { x: 24, y: 36 },
-    { x: 80, y: 82 },
-    { x: 200, y: 80 },
-    { x: 256, y: 30 },
+    { x: 26, y: 46 },
+    { x: 84, y: 92 },
+    { x: 200, y: 90 },
+    { x: 258, y: 40 },
   ];
+  const unit = 6;
   const r = rng(type.length * 31 + 5);
-  const N = 26;
-  const unit = 6.4;
-  const polys = [];
-  for (let i = 0; i < N; i++) {
-    const t = 0.04 + (0.92 * i) / (N - 1);
+  const N = m.count || 26;
+  const frame = (t) => {
     const p = cubic(line, t);
     const tan = norm(cubicD(line, t));
     let n = { x: -tan.y, y: tan.x };
     if (n.y < 0) n = { x: -n.x, y: -n.y };
-    const side = t < 0.5 ? -1 : 1;
-    let dir = norm({ x: n.x + tan.x * (t - 0.5) * 1.3, y: n.y + tan.y * (t - 0.5) * 1.3 });
-    let len = m.lens(t) * unit;
+    const k = 1.3 + (m.tilt || 0) * t;
+    const dir = norm({ x: n.x + tan.x * (t - 0.5) * k, y: n.y + tan.y * (t - 0.5) * k });
+    return { p, dir, side: t < 0.5 ? -1 : 1 };
+  };
+  const tOf = (i) => 0.04 + (0.92 * i) / (N - 1);
+  const polys = [];
+  for (let i = 0; i < N; i++) {
+    const t = tOf(i);
+    const f = frame(t);
+    let dir = f.dir;
+    let len = m.mm(t) * unit;
     if (m.wet) {
-      // лучики: соседние реснички сходятся в острые пучки
-      const group = Math.floor(i / 3);
-      const ct = 0.04 + (0.92 * (group * 3 + 1)) / (N - 1);
-      const cf = norm({ x: n.x + tan.x * (ct - 0.5) * 1.3, y: n.y + tan.y * (ct - 0.5) * 1.3 });
-      dir = norm({ x: dir.x * 0.4 + cf.x * 0.6, y: dir.y * 0.4 + cf.y * 0.6 });
-      len *= i % 3 === 1 ? 1.08 : 0.9;
+      // реснички сходятся в острые лучики к общему кончику группы
+      const g = Math.floor(i / m.wet);
+      const ct = tOf(Math.min(N - 1, g * m.wet + (m.wet - 1) / 2));
+      const cf = frame(ct);
+      const tip = { x: cf.p.x + cf.dir.x * m.mm(ct) * unit * 1.04, y: cf.p.y + cf.dir.y * m.mm(ct) * unit * 1.04 };
+      const v = { x: tip.x - f.p.x, y: tip.y - f.p.y };
+      len = Math.hypot(v.x, v.y);
+      dir = norm(v);
     }
-    for (let f = 0; f < m.fibers; f++) {
-      const ang = (f === 0 ? 0 : f === 1 ? -m.spread : m.spread) * side;
-      polys.push(polyString(p, rot(dir, ang + (r() - 0.5) * 0.05), len * (f ? 0.94 : 1), 2.4, 0.12, side));
+    for (let k = 0; k < m.fibers; k++) {
+      const ang = (k === 0 ? 0 : k === 1 ? -m.spread : m.spread) * f.side;
+      const jitter = m.wet ? 0 : (r() - 0.5) * 0.05;
+      polys.push(pts(f.p, rot(dir, ang + jitter), len * (k ? 0.93 : 1), m.width, m.wet ? 0.02 : 0.1, f.side));
     }
   }
-  return `<svg viewBox="0 0 280 170" aria-hidden="true" focusable="false">
-    <path d="M24 36 C80 82 200 80 256 30" fill="none" stroke="var(--skin-line)" stroke-width="2.5" stroke-linecap="round"/>
+  // зоны длины: тонкие засечки над линией роста и цифры в мм
+  const zones = [0.1, 0.32, 0.54, 0.76, 0.95].map((t) => {
+    const p = cubic(line, t);
+    return `<line x1="${p.x.toFixed(1)}" y1="${(p.y - 6).toFixed(1)}" x2="${p.x.toFixed(1)}" y2="${(p.y - 13).toFixed(1)}"/>` +
+      `<text x="${p.x.toFixed(1)}" y="${(p.y - 17).toFixed(1)}">${Math.round(m.mm(t))}</text>`;
+  });
+  // пометка от руки со стрелкой к нужному месту
+  const nf = frame(m.note.t);
+  const tipLen = m.mm(m.note.t) * unit;
+  const tip = { x: nf.p.x + nf.dir.x * tipLen, y: nf.p.y + nf.dir.y * tipLen };
+  const right = m.note.t > 0.6;
+  const tx = right ? 272 : m.note.t < 0.4 ? 8 : 140;
+  const anchor = right ? "end" : m.note.t < 0.4 ? "start" : "middle";
+  const ty = 194;
+  const sx = right ? tx - 30 : tx + (anchor === "middle" ? 0 : 30);
+  const sy = ty - 16;
+  const arrow = `M${sx} ${sy} Q${((sx + tip.x) / 2 + (right ? 18 : -18)).toFixed(1)} ${((sy + tip.y) / 2).toFixed(1)} ${tip.x.toFixed(1)} ${(tip.y + 6).toFixed(1)}`;
+  return `<svg viewBox="0 0 280 200" role="img" aria-label="Схема эффекта: длины ресниц по зонам">
+    <path d="M26 46 C84 92 200 90 258 40" fill="none" stroke="var(--skin-line)" stroke-width="2.5" stroke-linecap="round"/>
+    <g class="map__zones">${zones.join("")}</g>
     <g fill="var(--lash-dark)">${polys.map((p) => `<polygon points="${p}"/>`).join("")}</g>
+    <path class="map__arrow" d="${arrow}"/>
+    <text class="map__note" x="${tx}" y="${ty}" text-anchor="${anchor}">${m.note.text}</text>
   </svg>`;
 }
