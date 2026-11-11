@@ -1,4 +1,3 @@
-import { lashMapSVG, EyeRenderer } from "../../js/lashes.js";
 
 // Скрытые стартовые состояния включаются, только если скрипты загрузились.
 document.documentElement.classList.add("js");
@@ -6,44 +5,47 @@ document.documentElement.classList.add("js");
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Схемы длин в коллажах пакетов */
-document.querySelectorAll("[data-lashmap]").forEach((el) => {
-  el.innerHTML = lashMapSVG(el.dataset.lashmap);
-});
-
-/* Живой стикер в hero: медленный цикл наращивания (или своё видео) */
-const loopCanvas = document.querySelector("[data-eye-loop]");
+/* Видео в hero: замедленно, пауза вне экрана */
 const heroVideo = document.querySelector("[data-hero-video]");
 if (heroVideo) {
-  heroVideo.playbackRate = 0.6;
-  if (loopCanvas) loopCanvas.hidden = true;
-} else if (loopCanvas) {
-  const eye = new EyeRenderer(loopCanvas, { tweezers: true, progress: reduceMotion ? 1 : 0 });
-  new ResizeObserver(() => eye.resize()).observe(loopCanvas);
-  if (!reduceMotion) {
-    const RUN = 16000; // мс на сборку
-    const HOLD = 3500; // мс любуемся результатом
-    let t0 = performance.now();
-    let visible = true;
-    new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(loopCanvas);
-    const tick = (now) => {
-      if (visible && !document.hidden) {
-        let t = now - t0;
-        if (t > RUN + HOLD) {
-          t0 = now;
-          t = 0;
-        }
-        const k = Math.min(1, t / RUN);
-        const p = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-        eye.render(p);
-        loopCanvas.style.opacity = t > RUN + HOLD - 600 ? String((RUN + HOLD - t) / 600) : t < 500 ? String(t / 500) : "1";
-      } else {
-        t0 += 16;
-      }
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+  const slow = () => (heroVideo.playbackRate = 0.75);
+  heroVideo.addEventListener("loadedmetadata", slow);
+  slow();
+  if (reduceMotion) heroVideo.removeAttribute("autoplay"), heroVideo.pause();
+  new IntersectionObserver(([e]) => {
+    if (reduceMotion) return;
+    if (e.isIntersecting) heroVideo.play().catch(() => {});
+    else heroVideo.pause();
+  }).observe(heroVideo);
+}
+
+/* Видео в галерее: играет, пока на экране */
+document.querySelectorAll(".shot--video video").forEach((v) => {
+  v.playbackRate = 0.8;
+  new IntersectionObserver(([e]) => {
+    if (reduceMotion) return;
+    if (e.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}); v.closest(".shot")?.classList.add("is-playing"); }
+    else v.pause();
+  }, { threshold: 0.5 }).observe(v);
+});
+
+/* Галерея работ: горизонтальная лента по вертикальной прокрутке (десктоп) */
+const works = document.querySelector("[data-works]");
+const track = works?.querySelector("[data-works-track]");
+function updateWorks() {
+  if (!works || !track) return;
+  const wide = window.matchMedia("(min-width: 861px)").matches && !reduceMotion;
+  works.classList.toggle("is-pinned", wide);
+  if (!wide) {
+    works.style.height = "";
+    track.style.transform = "";
+    return;
   }
+  const dist = Math.max(0, track.scrollWidth - window.innerWidth + 80);
+  works.style.height = `${window.innerHeight + dist}px`;
+  const r = works.getBoundingClientRect();
+  const p = clamp(-r.top / Math.max(1, dist));
+  track.style.transform = `translate3d(${(-dist * p).toFixed(1)}px,0,0)`;
 }
 
 /* Появления по прокрутке */
@@ -71,6 +73,7 @@ const parallax = [...document.querySelectorAll("[data-parallax]")];
 
 function frame() {
   queued = false;
+  updateWorks();
   const vh = window.innerHeight;
   nav?.classList.toggle("is-scrolled", window.scrollY > 24);
   for (const el of progressEls) {
@@ -133,7 +136,7 @@ if (form) {
       const endpoint = form.dataset.endpoint;
       if (!endpoint) {
         await new Promise((r) => setTimeout(r, 400));
-        status.textContent = "Онлайн-заявки пока не подключены. Напиши в Telegram или позвони — контакты рядом.";
+        status.textContent = "Онлайн-заявки пока не подключены. Напиши в Instagram или ВКонтакте — ссылки рядом.";
         return;
       }
       const res = await fetch(endpoint, {
@@ -146,7 +149,7 @@ if (form) {
       done.hidden = false;
       done.focus();
     } catch {
-      status.textContent = "Не получилось отправить. Попробуй ещё раз или напиши в Telegram.";
+      status.textContent = "Не получилось отправить. Попробуй ещё раз или напиши в Instagram или ВКонтакте.";
     } finally {
       submit.disabled = false;
       submit.classList.remove("is-loading");
