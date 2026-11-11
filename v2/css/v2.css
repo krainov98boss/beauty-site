@@ -139,7 +139,8 @@ html.js .line > span { translate: 0 110%; animation: rise 1s var(--ease-out) for
   box-shadow: 0 30px 50px -30px rgb(78 18 27 / 0.45), 0 0 0 1.5px var(--stripe-pink);
   overflow: hidden;
 }
-.sticker-cut img { width: 118%; max-width: none; margin-inline: -9%; }
+.sticker-cut { position: relative; }
+.sticker-cut img { position: absolute; left: 50%; top: 50%; width: 118%; max-width: none; height: auto; translate: -50% -50%; }
 html.js .hero__sticker .sticker-cut { animation: pop 1.1s var(--ease-out) 0.2s both; }
 @keyframes pop { from { scale: 0.7; rotate: -10deg; opacity: 0; } to { scale: 1; rotate: 0deg; opacity: 1; } }
 .hero__bow { position: absolute; color: var(--rose-soft); filter: drop-shadow(0 6px 6px rgb(78 18 27 / 0.18)); animation: sway 4s ease-in-out infinite alternate; }
