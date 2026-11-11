@@ -936,8 +936,8 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
   top: 30%;
   display: grid;
   justify-items: start;
-  width: 9rem;
-  font: 600 1.45rem / 1.05 var(--font-hand);
+  width: 10rem;
+  font: 600 1.55rem / 1.05 var(--font-hand);
   color: var(--rose);
   text-align: left;
   rotate: 6deg;

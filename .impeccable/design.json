@@ -1,0 +1,718 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T11:41:10Z",
+  "title": "Design System: Soft Stripe",
+  "extensions": {
+    "colorMeta": {
+      "wine": {
+        "role": "primary",
+        "displayName": "Винный",
+        "canonical": "#6b1b2a",
+        "tonalRamp": [
+          "oklch(15% 0.061 14)",
+          "oklch(26% 0.094 14)",
+          "oklch(38% 0.115 14)",
+          "oklch(49% 0.123 14)",
+          "oklch(61% 0.117 14)",
+          "oklch(72% 0.097 14)",
+          "oklch(84% 0.065 14)",
+          "oklch(95% 0.023 14)"
+        ]
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Глубокий винный",
+        "canonical": "#4f111e",
+        "tonalRamp": [
+          "oklch(15% 0.056 13)",
+          "oklch(26% 0.086 13)",
+          "oklch(38% 0.106 13)",
+          "oklch(49% 0.113 13)",
+          "oklch(61% 0.108 13)",
+          "oklch(72% 0.089 13)",
+          "oklch(84% 0.060 13)",
+          "oklch(95% 0.021 13)"
+        ]
+      },
+      "rose": {
+        "role": "secondary",
+        "displayName": "Роза",
+        "canonical": "#bf3d67",
+        "tonalRamp": [
+          "oklch(15% 0.084 5)",
+          "oklch(26% 0.130 5)",
+          "oklch(38% 0.160 5)",
+          "oklch(49% 0.171 5)",
+          "oklch(61% 0.162 5)",
+          "oklch(72% 0.135 5)",
+          "oklch(84% 0.090 5)",
+          "oklch(95% 0.032 5)"
+        ]
+      },
+      "rose-deep": {
+        "role": "secondary",
+        "displayName": "Тёмная роза",
+        "canonical": "#a8345a",
+        "tonalRamp": [
+          "oklch(15% 0.076 5)",
+          "oklch(26% 0.117 5)",
+          "oklch(38% 0.144 5)",
+          "oklch(49% 0.154 5)",
+          "oklch(61% 0.146 5)",
+          "oklch(72% 0.121 5)",
+          "oklch(84% 0.081 5)",
+          "oklch(95% 0.029 5)"
+        ]
+      },
+      "rose-soft": {
+        "role": "secondary",
+        "displayName": "Розовая пудра",
+        "canonical": "#f2a9be",
+        "tonalRamp": [
+          "oklch(15% 0.074 0)",
+          "oklch(26% 0.114 0)",
+          "oklch(38% 0.141 0)",
+          "oklch(49% 0.150 0)",
+          "oklch(61% 0.143 0)",
+          "oklch(72% 0.119 0)",
+          "oklch(84% 0.080 0)",
+          "oklch(95% 0.028 0)"
+        ]
+      },
+      "gold": {
+        "role": "tertiary",
+        "displayName": "Золото",
+        "canonical": "#d6a24a",
+        "tonalRamp": [
+          "oklch(15% 0.080 78)",
+          "oklch(26% 0.124 78)",
+          "oklch(38% 0.153 78)",
+          "oklch(49% 0.163 78)",
+          "oklch(61% 0.155 78)",
+          "oklch(72% 0.129 78)",
+          "oklch(84% 0.086 78)",
+          "oklch(95% 0.031 78)"
+        ]
+      },
+      "butter": {
+        "role": "tertiary",
+        "displayName": "Масло",
+        "canonical": "#f5dc94",
+        "tonalRamp": [
+          "oklch(15% 0.133 91)",
+          "oklch(26% 0.190 91)",
+          "oklch(38% 0.190 91)",
+          "oklch(49% 0.190 91)",
+          "oklch(61% 0.190 91)",
+          "oklch(72% 0.190 91)",
+          "oklch(84% 0.143 91)",
+          "oklch(95% 0.051 91)"
+        ]
+      },
+      "sky": {
+        "role": "tertiary",
+        "displayName": "Небесный",
+        "canonical": "#8fb0e3",
+        "tonalRamp": [
+          "oklch(15% 0.056 259)",
+          "oklch(26% 0.086 259)",
+          "oklch(38% 0.106 259)",
+          "oklch(49% 0.113 259)",
+          "oklch(61% 0.107 259)",
+          "oklch(72% 0.089 259)",
+          "oklch(84% 0.060 259)",
+          "oklch(95% 0.021 259)"
+        ]
+      },
+      "blush": {
+        "role": "neutral",
+        "displayName": "Пудровый розовый",
+        "canonical": "#f8dde4",
+        "tonalRamp": [
+          "oklch(15% 0.054 0)",
+          "oklch(26% 0.084 0)",
+          "oklch(38% 0.104 0)",
+          "oklch(49% 0.111 0)",
+          "oklch(61% 0.105 0)",
+          "oklch(72% 0.087 0)",
+          "oklch(84% 0.059 0)",
+          "oklch(95% 0.021 0)"
+        ]
+      },
+      "blush-light": {
+        "role": "neutral",
+        "displayName": "Светлый розовый",
+        "canonical": "#fcecf0",
+        "tonalRamp": [
+          "oklch(15% 0.036 0)",
+          "oklch(26% 0.055 0)",
+          "oklch(38% 0.068 0)",
+          "oklch(49% 0.072 0)",
+          "oklch(61% 0.069 0)",
+          "oklch(72% 0.057 0)",
+          "oklch(84% 0.038 0)",
+          "oklch(95% 0.014 0)"
+        ]
+      },
+      "powder": {
+        "role": "neutral",
+        "displayName": "Пудровый голубой",
+        "canonical": "#dbe6f6",
+        "tonalRamp": [
+          "oklch(15% 0.043 258)",
+          "oklch(26% 0.067 258)",
+          "oklch(38% 0.082 258)",
+          "oklch(49% 0.088 258)",
+          "oklch(61% 0.084 258)",
+          "oklch(72% 0.069 258)",
+          "oklch(84% 0.047 258)",
+          "oklch(95% 0.017 258)"
+        ]
+      },
+      "powder-light": {
+        "role": "neutral",
+        "displayName": "Светлый голубой",
+        "canonical": "#ebf1fb",
+        "tonalRamp": [
+          "oklch(15% 0.029 261)",
+          "oklch(26% 0.045 261)",
+          "oklch(38% 0.056 261)",
+          "oklch(49% 0.060 261)",
+          "oklch(61% 0.057 261)",
+          "oklch(72% 0.047 261)",
+          "oklch(84% 0.032 261)",
+          "oklch(95% 0.011 261)"
+        ]
+      },
+      "lilac": {
+        "role": "neutral",
+        "displayName": "Лиловый",
+        "canonical": "#e5e3f7",
+        "tonalRamp": [
+          "oklch(15% 0.048 290)",
+          "oklch(26% 0.075 290)",
+          "oklch(38% 0.092 290)",
+          "oklch(49% 0.098 290)",
+          "oklch(61% 0.093 290)",
+          "oklch(72% 0.077 290)",
+          "oklch(84% 0.052 290)",
+          "oklch(95% 0.018 290)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Крем",
+        "canonical": "#fff8f2",
+        "tonalRamp": [
+          "oklch(15% 0.022 63)",
+          "oklch(26% 0.033 63)",
+          "oklch(38% 0.041 63)",
+          "oklch(49% 0.044 63)",
+          "oklch(61% 0.042 63)",
+          "oklch(72% 0.035 63)",
+          "oklch(84% 0.023 63)",
+          "oklch(95% 0.008 63)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Бумага",
+        "canonical": "#fffdfb",
+        "tonalRamp": [
+          "oklch(15% 0.007 68)",
+          "oklch(26% 0.010 68)",
+          "oklch(38% 0.013 68)",
+          "oklch(49% 0.014 68)",
+          "oklch(61% 0.013 68)",
+          "oklch(72% 0.011 68)",
+          "oklch(84% 0.007 68)",
+          "oklch(95% 0.003 68)"
+        ]
+      },
+      "stripe-pink": {
+        "role": "neutral",
+        "displayName": "Розовая полоса",
+        "canonical": "#f3c6d2",
+        "tonalRamp": [
+          "oklch(15% 0.060 0)",
+          "oklch(26% 0.092 0)",
+          "oklch(38% 0.114 0)",
+          "oklch(49% 0.121 0)",
+          "oklch(61% 0.115 0)",
+          "oklch(72% 0.096 0)",
+          "oklch(84% 0.064 0)",
+          "oklch(95% 0.023 0)"
+        ]
+      },
+      "stripe-blue": {
+        "role": "neutral",
+        "displayName": "Голубая полоса",
+        "canonical": "#c3d5ef",
+        "tonalRamp": [
+          "oklch(15% 0.046 258)",
+          "oklch(26% 0.071 258)",
+          "oklch(38% 0.087 258)",
+          "oklch(49% 0.093 258)",
+          "oklch(61% 0.088 258)",
+          "oklch(72% 0.073 258)",
+          "oklch(84% 0.049 258)",
+          "oklch(95% 0.017 258)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Чернила",
+        "canonical": "#3b2a2e",
+        "tonalRamp": [
+          "oklch(15% 0.015 3)",
+          "oklch(26% 0.024 3)",
+          "oklch(38% 0.029 3)",
+          "oklch(49% 0.031 3)",
+          "oklch(61% 0.030 3)",
+          "oklch(72% 0.025 3)",
+          "oklch(84% 0.017 3)",
+          "oklch(95% 0.006 3)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Мягкие чернила",
+        "canonical": "#6c5056",
+        "tonalRamp": [
+          "oklch(15% 0.019 4)",
+          "oklch(26% 0.030 4)",
+          "oklch(38% 0.036 4)",
+          "oklch(49% 0.039 4)",
+          "oklch(61% 0.037 4)",
+          "oklch(72% 0.031 4)",
+          "oklch(84% 0.021 4)",
+          "oklch(95% 0.007 4)"
+        ]
+      },
+      "on-wine": {
+        "role": "neutral",
+        "displayName": "На вине",
+        "canonical": "#fff2ea",
+        "tonalRamp": [
+          "oklch(15% 0.035 54)",
+          "oklch(26% 0.054 54)",
+          "oklch(38% 0.066 54)",
+          "oklch(49% 0.071 54)",
+          "oklch(61% 0.067 54)",
+          "oklch(72% 0.056 54)",
+          "oklch(84% 0.037 54)",
+          "oklch(95% 0.013 54)"
+        ]
+      },
+      "on-wine-soft": {
+        "role": "neutral",
+        "displayName": "На вине, мягкий",
+        "canonical": "#f1cfd3",
+        "tonalRamp": [
+          "oklch(15% 0.048 10)",
+          "oklch(26% 0.074 10)",
+          "oklch(38% 0.091 10)",
+          "oklch(49% 0.098 10)",
+          "oklch(61% 0.093 10)",
+          "oklch(72% 0.077 10)",
+          "oklch(84% 0.052 10)",
+          "oklch(95% 0.018 10)"
+        ]
+      },
+      "skin": {
+        "role": "illustration",
+        "displayName": "Кожа",
+        "canonical": "#f6d6c9",
+        "tonalRamp": [
+          "oklch(15% 0.056 43)",
+          "oklch(26% 0.087 43)",
+          "oklch(38% 0.107 43)",
+          "oklch(49% 0.115 43)",
+          "oklch(61% 0.109 43)",
+          "oklch(72% 0.090 43)",
+          "oklch(84% 0.061 43)",
+          "oklch(95% 0.022 43)"
+        ]
+      },
+      "skin-line": {
+        "role": "illustration",
+        "displayName": "Линия кожи",
+        "canonical": "#c98d7d",
+        "tonalRamp": [
+          "oklch(15% 0.046 36)",
+          "oklch(26% 0.071 36)",
+          "oklch(38% 0.087 36)",
+          "oklch(49% 0.093 36)",
+          "oklch(61% 0.089 36)",
+          "oklch(72% 0.074 36)",
+          "oklch(84% 0.049 36)",
+          "oklch(95% 0.018 36)"
+        ]
+      },
+      "patch": {
+        "role": "illustration",
+        "displayName": "Патч",
+        "canonical": "#fde7ee",
+        "tonalRamp": [
+          "oklch(15% 0.050 356)",
+          "oklch(26% 0.078 356)",
+          "oklch(38% 0.096 356)",
+          "oklch(49% 0.102 356)",
+          "oklch(61% 0.097 356)",
+          "oklch(72% 0.081 356)",
+          "oklch(84% 0.054 356)",
+          "oklch(95% 0.019 356)"
+        ]
+      },
+      "lash-light": {
+        "role": "illustration",
+        "displayName": "Свои ресницы",
+        "canonical": "#b3a196",
+        "tonalRamp": [
+          "oklch(15% 0.016 54)",
+          "oklch(26% 0.025 54)",
+          "oklch(38% 0.031 54)",
+          "oklch(49% 0.033 54)",
+          "oklch(61% 0.032 54)",
+          "oklch(72% 0.026 54)",
+          "oklch(84% 0.018 54)",
+          "oklch(95% 0.006 54)"
+        ]
+      },
+      "lash-dark": {
+        "role": "illustration",
+        "displayName": "Глубокий чёрный",
+        "canonical": "#141016",
+        "tonalRamp": [
+          "oklch(15% 0.012 314)",
+          "oklch(26% 0.018 314)",
+          "oklch(38% 0.022 314)",
+          "oklch(49% 0.024 314)",
+          "oklch(61% 0.023 314)",
+          "oklch(72% 0.019 314)",
+          "oklch(84% 0.013 314)",
+          "oklch(95% 0.004 314)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Только заголовок первого экрана, розой, по центру."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Заголовки секций, винным или розой."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Названия услуг на папках; тем же голосом логотип и «Заявка у меня!»."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Вводная строка под заголовком, 26–30ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Абзацы в узких колонках 16–34ch."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "Текст подсказок, ошибки, копирайт."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Капс кнопок и подписей полей; не надзаголовок."
+      },
+      "hand": {
+        "displayName": "Hand",
+        "purpose": "Рукописные пометки в одну строку: подсказки, стикеры, шаги, цены, подписи."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-soft",
+        "value": "0 18px 40px -22px rgb(168 52 90 / 0.35)",
+        "purpose": "Предметы на поле: стикеры, подсказки, лист, окно сравнения."
+      },
+      {
+        "name": "shadow-card",
+        "value": "0 14px 30px -18px rgb(79 17 30 / 0.4)",
+        "purpose": "Кнопки, полароиды, папки, кружки контактов, ручка сравнения."
+      },
+      {
+        "name": "shadow-lift",
+        "value": "0 26px 46px -24px rgb(79 17 30 / 0.45)",
+        "purpose": "Ответ на наведение; форма записи и рамка портрета."
+      },
+      {
+        "name": "nav-scrolled",
+        "value": "0 10px 30px -24px var(--wine)",
+        "purpose": "Бумажная навигация после прокрутки."
+      },
+      {
+        "name": "field-focus-halo",
+        "value": "0 0 0 4px var(--blush)",
+        "purpose": "Ореол поля ввода в фокусе (у активной точки шкалы — var(--blush-light))."
+      },
+      {
+        "name": "focus-outline",
+        "value": "outline: 2px solid var(--rose); outline-offset: 3px",
+        "purpose": "Фокус клавиатуры по всей странице; в футере — var(--rose-soft)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Основная кривая: наведение, появления, раздача, подъём."
+      },
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(0.33, 1, 0.68, 1)",
+        "purpose": "Прорисовка ленты шагов."
+      },
+      {
+        "name": "hover-lift",
+        "value": "translateY(-2px), 0.35s ease-out",
+        "purpose": "Кнопки: подъём на 2px с тенью подъёма."
+      },
+      {
+        "name": "float",
+        "value": "translate 0 ±6px, rotate ±4deg, 4.5–8s ease-in-out infinite alternate",
+        "purpose": "Покачивание декора."
+      },
+      {
+        "name": "tie",
+        "value": "0.9s ease-out: scale 0.3 → 1.15 → 1, rotate −40deg → 8deg → 0",
+        "purpose": "Банты шагов и бант после отправки формы «завязываются»."
+      },
+      {
+        "name": "deal",
+        "value": "translate from deck centre + rotate ×4, 0.9s ease-out, stagger 70ms",
+        "purpose": "Колода полароидов раздаётся веером."
+      },
+      {
+        "name": "folders-rise",
+        "value": "translateY 6rem → 0, rotate ×−3 → own, 0.9s ease-out, stagger 110ms",
+        "purpose": "Папки цен поднимаются при появлении."
+      },
+      {
+        "name": "sheet-unfold",
+        "value": "clip-path inset(0 0 100% 0) → inset(0), 1.1s ease-out",
+        "purpose": "Лист «Как проходит» разворачивается сверху вниз."
+      },
+      {
+        "name": "ribbon-draw",
+        "value": "stroke-dashoffset 1 → 0, 1.6s ease-soft, delay 0.3s",
+        "purpose": "Лента шагов прорисовывается; шаги следом с шагом 160ms."
+      },
+      {
+        "name": "frame-swing",
+        "value": "rotate −16deg → −3deg, translate −2rem 2rem → 0, 1.2s ease-out",
+        "purpose": "Рамка портрета доворачивается при появлении."
+      },
+      {
+        "name": "confetti-fall",
+        "value": "translateY −120px → −6px, rotate −60deg → −4deg, 1.4s ease-out, stagger 120ms",
+        "purpose": "Декор «Записи» падает конфетти, потом покачивается."
+      },
+      {
+        "name": "hero-scrub",
+        "value": "sticky 440vh; progress 0–1 → этапы свои / изоляция / длина / объём / цвет",
+        "purpose": "Сборка ресниц по прокрутке; без JS и при reduced motion — финальный кадр."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation/transition 0.01ms, delay 0",
+        "purpose": "При prefers-reduced-motion движение гасится, всё видно сразу."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "480px"
+      },
+      {
+        "name": "narrow",
+        "value": "760px"
+      },
+      {
+        "name": "booking-stack",
+        "value": "860px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "annotation",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Винная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Главное действие «Записаться»: навигация (малая), первый экран, форма.",
+      "html": "<a class=\"ds-btn-wine\" href=\"#\">Записаться</a>",
+      "css": ".ds-btn-wine { display:inline-flex;align-items:center;justify-content:center;gap:0.6em;min-height:3.25rem;padding:0.9rem 1.9rem;border-radius:var(--radius-pill);font:500 var(--fs-label)/1 var(--font-body);letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), background-color 0.25s; background:var(--wine);color:var(--on-wine);border:1.5px solid var(--wine);box-shadow:var(--shadow-card); } .ds-btn-wine:hover { transform:translateY(-2px);box-shadow:var(--shadow-lift);background:var(--wine-deep); } .ds-btn-wine:active { transform:translateY(0); } .ds-btn-wine:focus-visible { outline:2px solid var(--rose);outline-offset:3px; }"
+    },
+    {
+      "name": "Мягкая кнопка",
+      "kind": "button",
+      "refersTo": "button-soft",
+      "description": "Вторичное действие внутри секции («Выбрать время»).",
+      "html": "<a class=\"ds-btn-soft\" href=\"#\">Выбрать время</a>",
+      "css": ".ds-btn-soft { display:inline-flex;align-items:center;justify-content:center;gap:0.6em;min-height:3.25rem;padding:0.9rem 1.9rem;border-radius:var(--radius-pill);font:500 var(--fs-label)/1 var(--font-body);letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), background-color 0.25s; background:var(--rose-soft);color:var(--wine);border:1.5px solid var(--rose-soft);box-shadow:var(--shadow-card); } .ds-btn-soft:hover { transform:translateY(-2px);box-shadow:var(--shadow-lift);background:var(--stripe-pink); } .ds-btn-soft:active { transform:translateY(0); } .ds-btn-soft:focus-visible { outline:2px solid var(--rose);outline-offset:3px; }"
+    },
+    {
+      "name": "Контурная кнопка",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Второй канал связи рядом с главной кнопкой, с иконкой.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M21.5 3.5 2.8 10.9l6.5 2.3 2.4 6.8 3.3-4.5 4.6 3.4L21.5 3.5ZM9.3 13.2l9.9-7.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg><span>Telegram</span></a>",
+      "css": ".ds-btn-line { display:inline-flex;align-items:center;justify-content:center;gap:0.6em;min-height:3.25rem;padding:0.9rem 1.9rem;border-radius:var(--radius-pill);font:500 var(--fs-label)/1 var(--font-body);letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), background-color 0.25s; background:transparent;color:var(--wine);border:1.5px solid var(--wine);box-shadow:none; } .ds-btn-line svg { width:1.15rem;height:1.15rem; } .ds-btn-line:hover { transform:translateY(-2px);background:var(--paper);box-shadow:var(--shadow-card); } .ds-btn-line:active { transform:translateY(0); } .ds-btn-line:focus-visible { outline:2px solid var(--rose);outline-offset:3px; }"
+    },
+    {
+      "name": "Поле ввода",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Поле формы записи с капс-подписью над ним.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"ds-name\">Как тебя зовут</label><input class=\"ds-field__input\" id=\"ds-name\" type=\"text\" placeholder=\"Имя\"></div>",
+      "css": ".ds-field { display:grid;gap:0.35rem;max-width:22rem; } .ds-field__label { font:500 var(--fs-label)/1.2 var(--font-body);letter-spacing:0.12em;text-transform:uppercase;color:var(--wine); } .ds-field__input { width:100%;min-height:3.1rem;padding:0.75rem 1rem;border:1.5px solid var(--stripe-pink);border-radius:var(--radius-m);background:var(--blush-light);color:var(--ink);font:400 1rem/1.3 var(--font-body);caret-color:var(--rose);transition:border-color 0.2s, background-color 0.2s, box-shadow 0.2s; } .ds-field__input::placeholder { color:var(--ink-soft);opacity:0.85; } .ds-field__input:hover { border-color:var(--rose-soft); } .ds-field__input:focus, .ds-field__input:focus-visible { outline:none;border-color:var(--rose);background-color:var(--paper);box-shadow:0 0 0 4px var(--blush); } .ds-field__input[aria-invalid=\"true\"] { border-color:var(--rose-deep);background-color:var(--paper); }"
+    },
+    {
+      "name": "Навигация",
+      "kind": "nav",
+      "refersTo": "nav-scrolled",
+      "description": "Фиксированная полоса: логотип, три ссылки, малая винная пилюля; бумажная после прокрутки.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav__logo\" href=\"#\"><span class=\"ds-nav__mark\"><svg viewBox=\"0 0 32 24\" width=\"32\" height=\"24\" aria-hidden=\"true\"><path d=\"M3 9.5c6 6.5 20 6.5 26-.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7.5 13 5.6 17.6M11.6 14.8l-1 4.8M16 15.4v5M20.4 14.9l1.1 4.8M24.6 12.8l2.2 4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg></span>[Lash Studio]</a><ul class=\"ds-nav__links\"><li><a href=\"#\">Эффекты</a></li><li><a href=\"#\">Как проходит</a></li><li><a href=\"#\">Цены</a></li></ul><a class=\"ds-nav__cta\" href=\"#\">Записаться</a></header>",
+      "css": ".ds-nav { display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:0.6rem 1.5rem;background:var(--paper);box-shadow:0 10px 30px -24px var(--wine); } .ds-nav__logo { display:inline-flex;align-items:center;gap:0.55rem;font:400 1.55rem/1 var(--font-display);color:var(--wine);text-decoration:none; } .ds-nav__mark { display:inline-flex;color:var(--rose); } .ds-nav__links { display:flex;gap:2rem;margin:0;padding:0;list-style:none; } .ds-nav__links a { font:400 0.95rem/1.6 var(--font-body);color:var(--ink);text-decoration:none;padding-block:0.4rem;background:linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;transition:background-size 0.35s var(--ease-out), color 0.2s; } .ds-nav__links a:hover { color:var(--rose-deep);background-size:100% 1px; } .ds-nav__links a:focus-visible, .ds-nav__logo:focus-visible { outline:2px solid var(--rose);outline-offset:3px;border-radius:6px; } .ds-nav__cta { display:inline-flex;align-items:center;justify-content:center;gap:0.6em;min-height:3.25rem;padding:0.9rem 1.9rem;border-radius:var(--radius-pill);font:500 var(--fs-label)/1 var(--font-body);letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), background-color 0.25s; min-height:2.75rem;padding:0.7rem 1.3rem;background:var(--wine);color:var(--on-wine);border:1.5px solid var(--wine);box-shadow:var(--shadow-card); } .ds-nav__cta:hover { transform:translateY(-2px);box-shadow:var(--shadow-lift);background:var(--wine-deep); } .ds-nav__cta:focus-visible { outline:2px solid var(--rose);outline-offset:3px; }"
+    },
+    {
+      "name": "Папка цены",
+      "kind": "card",
+      "refersTo": "folder-card",
+      "description": "Винная папка с ушком: услуга, подсказка, цена почерком, «записаться» капсом.",
+      "html": "<a class=\"ds-folder\" href=\"#\"><span class=\"ds-folder__tab\" aria-hidden=\"true\"><svg viewBox=\"0 0 48 48\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M24 40.5C10.5 31 5.5 23.4 8.2 15.4 10.8 8 19.8 7.6 24 14.6c4.2-7 13.2-6.6 15.8.8 2.7 8-2.3 15.6-15.8 25.1Z\" fill=\"currentColor\"/></svg></span><span class=\"ds-folder__name\">Классика</span><span class=\"ds-folder__hint\">натурально</span><span class=\"ds-folder__price\">[цена]&nbsp;₽</span><span class=\"ds-folder__go\">записаться <svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" aria-hidden=\"true\" style=\"rotate:-90deg\"><path d=\"M12 4v15m-6-6 6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
+      "css": ".ds-folder { position:relative;display:grid;align-content:start;width:13rem;min-height:16rem;margin-top:2rem;padding:2rem 1.25rem 1.2rem;background:var(--wine);color:var(--on-wine);border-radius:0 var(--radius-m) var(--radius-m) var(--radius-m);box-shadow:var(--shadow-card);text-decoration:none;rotate:-2deg;transition:translate 0.5s var(--ease-out), rotate 0.5s var(--ease-out), box-shadow 0.5s; } .ds-folder__tab { position:absolute;bottom:calc(100% - 1px);left:0;display:grid;place-items:center;width:4.25rem;height:1.9rem;background:inherit;border-radius:var(--radius-m) var(--radius-m) 0 0;color:var(--rose-soft); } .ds-folder__name { font:400 clamp(1.8rem, 1.3rem + 1vw, 2.3rem)/1 var(--font-display); } .ds-folder__hint { margin-top:0.4rem;font:400 0.92rem/1.6 var(--font-body);color:var(--on-wine-soft); } .ds-folder__price { margin-top:auto;padding-top:1.5rem;font:600 1.6rem/1 var(--font-hand);border-top:1px dashed var(--on-wine-soft); } .ds-folder__go { display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.9rem;font:500 0.72rem/1 var(--font-body);letter-spacing:0.16em;text-transform:uppercase;color:var(--on-wine-soft);transition:color 0.3s, gap 0.3s var(--ease-out); } .ds-folder:hover { translate:0 -0.6rem;rotate:0deg;box-shadow:var(--shadow-lift); } .ds-folder:hover .ds-folder__go { color:var(--on-wine);gap:0.6rem; } .ds-folder:focus-visible { outline:2px solid var(--wine);outline-offset:4px; }"
+    },
+    {
+      "name": "Стикер",
+      "kind": "custom",
+      "refersTo": "sticker",
+      "description": "Бумажный стикер с пунктиром, рисунком, подписью почерком и зачёркиванием розой.",
+      "html": "<div class=\"ds-sticker\"><span class=\"ds-sticker__art\"><svg viewBox=\"0 0 48 48\" width=\"24\" height=\"24\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M24 21.5C18.5 12 6.5 10 7 18.8c.5 8 11 7.6 17 2.7Z\"/><path d=\"M24 21.5C29.5 12 41.5 10 41 18.8c-.5 8-11 7.6-17 2.7Z\"/><path d=\"M22.6 24c-2.4 7-6 12.6-9.6 17.6l4.2-.6 1.6 3.6c3.2-5.6 5.6-12 6.2-19\"/><path d=\"M25.4 24c2.4 7 6 12.6 9.6 17.6l-4.2-.6-1.6 3.6c-3.2-5.6-5.6-12-6.2-19\"/><path d=\"M12 17.4c2.4-1.6 5.6-.6 8 2.2M36 17.4c-2.4-1.6-5.6-.6-8 2.2\"/></g><ellipse cx=\"24\" cy=\"22\" rx=\"3.2\" ry=\"3.7\" fill=\"currentColor\"/></svg></span><span class=\"ds-sticker__label\">красить ресницы</span><svg class=\"ds-sticker__strike\" viewBox=\"0 0 200 40\" aria-hidden=\"true\"><path d=\"M6 26C40 14 70 30 104 18s70-6 90-14\"/></svg></div>",
+      "css": ".ds-sticker { position:relative;display:grid;justify-items:center;gap:0.6rem;width:14rem;padding:1.6rem 1.2rem 1.4rem;background:var(--paper);border:6px solid var(--paper);outline:1.5px dashed var(--stripe-blue);outline-offset:-12px;border-radius:var(--radius-l);box-shadow:var(--shadow-soft);rotate:-6deg; } .ds-sticker__art { display:grid;place-items:center;width:5.25rem;height:5.25rem;color:var(--wine); } .ds-sticker__art svg { width:100%;height:100%; } .ds-sticker__label { font:600 clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem)/1.1 var(--font-hand);color:var(--ink);text-align:center; } .ds-sticker__strike { position:absolute;left:4%;top:50%;width:92%;height:auto;translate:0 -40%;overflow:visible; } .ds-sticker__strike path { fill:none;stroke:var(--rose);stroke-width:6;stroke-linecap:round; }"
+    },
+    {
+      "name": "Полароид",
+      "kind": "card",
+      "refersTo": "polaroid",
+      "description": "Карточка эффекта: лунка со схемой, подпись почерком, скотч сверху, выпрямляется при наведении.",
+      "html": "<figure class=\"ds-polaroid\"><div class=\"ds-polaroid__img\"><svg viewBox=\"0 0 32 24\" width=\"32\" height=\"24\" aria-hidden=\"true\"><path d=\"M3 9.5c6 6.5 20 6.5 26-.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7.5 13 5.6 17.6M11.6 14.8l-1 4.8M16 15.4v5M20.4 14.9l1.1 4.8M24.6 12.8l2.2 4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg></div><figcaption class=\"ds-polaroid__cap\">Классика<small>натуральный изгиб</small></figcaption></figure>",
+      "css": ".ds-polaroid { position:relative;width:12.8rem;margin:1rem 0 0;padding:0.7rem 0.7rem 0.4rem;background:var(--paper);border-radius:var(--radius-s);box-shadow:var(--shadow-card);rotate:-4deg;transition:rotate 0.5s var(--ease-out), scale 0.5s var(--ease-out), box-shadow 0.5s; } .ds-polaroid::before { content:\"\";position:absolute;top:-12px;left:50%;width:64px;height:22px;margin-left:-32px;background:var(--stripe-blue);opacity:0.8;rotate:8deg;border-radius:2px; } .ds-polaroid__img { aspect-ratio:1 / 0.82;display:grid;place-items:center;padding:0.5rem;background:var(--blush-light);border-radius:2px;color:var(--lash-dark); } .ds-polaroid__img svg { width:70%;height:auto; } .ds-polaroid__cap { display:grid;padding:0.55rem 0.2rem 0.45rem;font:600 1.7rem/1 var(--font-hand);color:var(--wine); } .ds-polaroid__cap small { margin-top:0.3rem;font:400 0.8rem/1.3 var(--font-body);color:var(--ink-soft); } .ds-polaroid:hover { rotate:0deg;scale:1.06;box-shadow:var(--shadow-lift); }"
+    },
+    {
+      "name": "Подсказка на скотче",
+      "kind": "custom",
+      "refersTo": "callout",
+      "description": "Бумажная подсказка у сцены сборки: заголовок почерком, строка пояснения, полоска скотча.",
+      "html": "<p class=\"ds-callout\"><b>Глубокий чёрный</b><span>как после туши, только всегда</span></p>",
+      "css": ".ds-callout { position:relative;display:grid;gap:0.1rem;width:max-content;max-width:15.5rem;margin:0.75rem 0 0;padding:0.7rem 1rem 0.75rem;background:var(--paper);border-radius:var(--radius-m);box-shadow:var(--shadow-soft);font:400 var(--fs-small)/1.35 var(--font-body);color:var(--ink-soft); } .ds-callout b { font:600 clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem)/1.05 var(--font-hand);color:var(--wine); } .ds-callout::before { content:\"\";position:absolute;top:-9px;right:14px;width:24px;height:14px;background:var(--stripe-pink);opacity:0.85;transform:rotate(8deg);border-radius:2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Пудровый скрапбук",
+    "overview": "Сайт выглядит как личный альбом мастера, разложенный на пудровом поле. Розовые и голубые поля идут во всю ширину, местами расчерчены вертикальными полосами; на них лежат бумажные предметы — лист, стикеры, полароиды, подсказки, форма, — приклеенные полосками скотча, с рукописными пометками на полях. Тёмная масса одна: винные кнопки, папки цен и футер. Всё остальное светлое, тёплое и мягкое; разговор ведёт один человек, а не салон.\n\nГлавное движение мира — сборка. На первом экране ресницы на закрытом глазу по мере прокрутки изолируются, удлиняются, собираются в пучки и темнеют до глубокого чёрного; дальше по странице лист разворачивается, полароиды раздаются веером, папки поднимаются, банты завязываются, конфетти падает. Декор — банты, сердечки и искры тонкой линией — рассыпан вручную, разного размера и наклона, и медленно покачивается. При `prefers-reduced-motion` и без скрипта всё стоит на месте и видно сразу.\n\nПлотность низкая: одна мысль на секцию, много воздуха, короткие тексты в узких колонках. Отклонено: шаблон «фото девушки + заголовок + кнопка + три карточки услуг», холодный белый фон, чёрный текст, горизонтальные полосы, жёсткие тени. Где сборка разошлась с исходными заметками `reference/design-system.md`, этот файл описывает сборку: основа — розово-голубые поля, а не кремовый фон; заголовки — дидона Oranienbaum вместо Cormorant/Lora; кнопки — пилюли, а не прямоугольники 2px; надзаголовков нет; сердечки — SVG, а не символ ♥.",
+    "keyCharacteristics": [
+      "Розово-голубые поля во всю ширину и вертикальные полосы; бумага — только для предметов на поле.",
+      "Одна тёмная масса — винный: главная кнопка, папки цен, футер.",
+      "Три голоса шрифта: дидона Oranienbaum говорит, Jost объясняет, Caveat подписывает.",
+      "Бумажные предметы слегка наклонены и приклеены полоской скотча.",
+      "Декор тонкой линией из одного спрайта: банты, сердечки, искры — рассыпаны, разного размера, покачиваются.",
+      "Мягкие тёплые тени с отрицательным разбросом; серых и жёстких нет.",
+      "Движение — «сборка»: scrub на первом экране, разворот, раздача, завязывание бантов при появлении."
+    ],
+    "rules": [
+      {
+        "name": "Правило винной массы",
+        "body": "Винный — единственная тёмная заливка: кнопка, папка, футер. Тёмная роза заливает только одну выделенную папку; других тёмных плашек и полей нет.",
+        "section": "colors"
+      },
+      {
+        "name": "Правило крупной розы",
+        "body": "Роза (#bf3d67) — только крупный текст, от 1.5rem: заголовки и рукописные пометки. На пудровом розовом у неё 4.03:1, поэтому мелкий розовый текст берёт тёмную розу.",
+        "section": "colors"
+      },
+      {
+        "name": "Правило поля и бумаги",
+        "body": "Секция лежит на пастельном поле или полосах во всю ширину; бумага и крем — для предметов на поле, а не фон секции.",
+        "section": "colors"
+      },
+      {
+        "name": "Правило трёх голосов",
+        "body": "Oranienbaum говорит (заголовки, названия, логотип), Jost объясняет (абзацы, кнопки, поля), Caveat подписывает (пометки в одну строку). Caveat никогда не набирает абзац; у Oranienbaum один вес — 400; четвёртого шрифта нет.",
+        "section": "typography"
+      },
+      {
+        "name": "Правило капса для действия",
+        "body": "Капс с трекингом — только у кнопок и подписей полей. Надзаголовков над заголовками нет: секция начинается сразу с заголовка.",
+        "section": "typography"
+      },
+      {
+        "name": "Правило чередования семейств",
+        "body": "Соседние поля меняют семейство: розовое ↔ голубое (голубой — «Без туши», розовые полосы — «Эффекты», голубые — «Как проходит», светлый розовый — «Мастер», голубой — «Цены», розовый — «До & после», лилово-голубой — «Запись»).",
+        "section": "layout"
+      },
+      {
+        "name": "Правило вертикальной полосы",
+        "body": "Полосы только вертикальные; горизонтальных полос нет.",
+        "section": "layout"
+      },
+      {
+        "name": "Правило тёплой тени",
+        "body": "Тень всегда тёплая (тёмная роза или вино), мягкая и с отрицательным разбросом. Серых, чёрных и жёстких смещённых теней нет; бумажная подложка под бантами шагов — вырез линии ленты, а не тень.",
+        "section": "elevation"
+      },
+      {
+        "name": "Правило подъёма",
+        "body": "Наведение поднимает предмет на одну ступень: тень с карточной на подъём, кнопка — на 2px вверх, папка — на 0.6rem и выпрямляется, полароид — выпрямляется и растёт до 1.06.",
+        "section": "elevation"
+      },
+      {
+        "name": "Правило скотча",
+        "body": "Бумажный предмет на поле приклеен полоской скотча: розовой полосой, голубой полосой или маслом, радиус 2px, прозрачность 0.8–0.9, наклон 3–8° (на рамке портрета — по диагонали угла). Так приклеены подсказки, полароиды, рамка портрета и форма.",
+        "section": "shapes"
+      },
+      {
+        "name": "Правило наклона",
+        "body": "Предметы лежат с лёгким наклоном от −6° до +5° (стикеры, полароиды, папки, рамка портрета −3°) и не выстраиваются по линейке; при наведении полароид и папка выпрямляются.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do клади каждую секцию на пастельное поле (`blush`, `blush-light`, `powder`, `lilac`) или вертикальные полосы во всю ширину и чередуй розовое и голубое семейства.",
+      "Do держи главное действие винной пилюлей «Записаться» в навигации, на первом экране и в форме.",
+      "Do приклеивай бумажные предметы на поле скотчем (`stripe-pink`, `stripe-blue`, `butter`; прозрачность 0.8–0.9, наклон 3–8°) и клади их с наклоном от −6° до +5°.",
+      "Do бери декор только из спрайта (бант, сердечко, искра): не больше 6 на секцию, неравные размеры 14–64px, вне текста, с `aria-hidden`.",
+      "Do пиши пометки почерком (Caveat 600) в одну строку, а абзацы — Jost.",
+      "Do ставь на место каждого неподтверждённого факта заглушку в квадратных скобках с точечным подчёркиванием.",
+      "Do прячь стартовые состояния появления только под `html.js` и гаси движение при `prefers-reduced-motion`: без скрипта всё видно сразу.",
+      "Do бери цвета только из `css/tokens.css`."
+    ],
+    "donts": [
+      "Don't клади секцию на белый или кремовый фон: бумага и крем — для предметов, а не для полей.",
+      "Don't используй горизонтальные полосы и не растушёвывай стык двух разных полей: секция кончается резким краем, волной или облаками либо тем цветом, с которого начинается следующая.",
+      "Don't делай тёмных плашек и полей, кроме винных (и одной выделенной папки тёмной розой); не набирай текст чистым чёрным — `ink` для текста, `lash-dark` только для ресниц.",
+      "Don't набирай розой (#bf3d67) текст мельче 1.5rem: для мелкого — тёмная роза или мягкие чернила.",
+      "Don't ставь капс-надзаголовок над заголовком секции: капс — только для кнопок и подписей полей.",
+      "Don't используй серые, чёрные или жёсткие смещённые тени.",
+      "Don't рисуй иконки символами (♥, ✓, эмодзи): только SVG тонкой линией.",
+      "Don't добавляй четвёртый шрифт и не набирай абзацы почерком."
+    ]
+  }
+}
