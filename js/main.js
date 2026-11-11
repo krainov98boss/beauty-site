@@ -1,126 +1,40 @@
-import { EyeRenderer, STAGES, stageState } from "./lashes.js";
+import { EyeRenderer } from "./lashes.js";
 
 // Скрытые стартовые состояния анимаций включаются, только если скрипты загрузились.
 document.documentElement.classList.add("js");
 
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const isNarrow = () => window.innerWidth <= 760;
 
 /* ---------- Навигация ---------- */
 
 const nav = document.querySelector("[data-nav]");
 const updateNav = () => nav?.classList.toggle("is-scrolled", window.scrollY > 24);
 
-/* ---------- Hero: сборка ресниц по прокрутке ---------- */
+/* ---------- Hero: шторка с бантом ---------- */
 
 const hero = document.querySelector("[data-hero]");
 const stage = hero?.querySelector("[data-stage]");
-const canvas = hero?.querySelector("[data-eye]");
-const video = hero?.querySelector("video[data-scrub]");
-const callouts = hero ? [...hero.querySelectorAll("[data-callout]")] : [];
-const steps = hero ? [...hero.querySelectorAll("[data-step]")] : [];
-const stepsList = hero?.querySelector("[data-steps]");
-const mmOut = hero?.querySelector("[data-mm]");
+const band = (p, a, b) => clamp((p - a) / (b - a));
+const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-// Когда какая подсказка видна (доля прокрутки hero).
-const WINDOWS = {
-  natural: [0, 0.09],
-  isolation: [0.14, 0.4],
-  length: [0.44, 0.61],
-  volume: [0.65, 0.78],
-  color: [0.82, 1.5],
-};
-// Где стоит карточка подсказки (условные координаты сцены 1000 × 600).
-const PLACE = {
-  natural: { x: 250, y: 470 },
-  isolation: { x: 245, y: 530 },
-  length: { x: 790, y: 500 },
-  volume: { x: 770, y: 450 },
-  color: { x: 265, y: 545 },
-};
-
-const eye = canvas ? new EyeRenderer(canvas, { tweezers: true }) : null;
-if (eye && video) eye.opts.leadersOnly = true;
-
-function heroProgress() {
+function updateHero() {
+  if (!hero || !stage) return;
   const r = hero.getBoundingClientRect();
   const total = r.height - window.innerHeight;
-  return total > 0 ? clamp(-r.top / total) : 1;
+  const p = total > 0 ? clamp(-r.top / total) : 1;
+  stage.style.setProperty("--u", easeInOut(band(p, 0.02, 0.32)).toFixed(4));
+  stage.style.setProperty("--c", easeInOut(band(p, 0.28, 0.78)).toFixed(4));
+  stage.style.setProperty("--v", easeInOut(band(p, 0.4, 0.86)).toFixed(4));
 }
 
-function windowAlpha(id, p) {
-  const [a, b] = WINDOWS[id];
-  const f = 0.035;
-  return Math.min(clamp((p - (a - f)) / f), clamp((b + f - p) / f));
-}
+/* ---------- Иллюстрации глаза (рамка hero, «до и после») ---------- */
 
-let videoSeek = 0;
-function updateHero() {
-  if (!hero || !eye) return;
-  const p = heroProgress();
-  const st = stageState(p);
-  hero.classList.toggle("is-moving", p > 0.02);
-  stage.style.setProperty("--p", p.toFixed(4));
-
-  if (video && video.duration) {
-    const t = p * (video.duration - 0.05);
-    if (Math.abs(t - videoSeek) > 0.01) {
-      video.currentTime = t;
-      videoSeek = t;
-    }
-  }
-
-  if (mmOut) mmOut.textContent = String(Math.round(8 + 4 * st.length));
-
-  const narrow = isNarrow();
-  const sceneRect = canvas.getBoundingClientRect();
-  const stageRect = stage.getBoundingClientRect();
-  const leaders = [];
-
-  for (const c of callouts) {
-    const id = c.dataset.callout;
-    const a = windowAlpha(id, p);
-    c.style.opacity = a.toFixed(3);
-    c.classList.toggle("is-on", a > 0.5);
-    if (narrow || a <= 0) continue;
-    const w = c.offsetWidth;
-    const h = c.offsetHeight;
-    const pt = eye.toCss(PLACE[id]);
-    const left = c.dataset.side === "left";
-    let x = left ? pt.x - w : pt.x;
-    let y = pt.y - h / 2;
-    // не выходить за края экрана
-    const minX = stageRect.left - sceneRect.left + 16;
-    const maxX = stageRect.right - sceneRect.left - w - 16;
-    const maxY = sceneRect.height - h - 4;
-    x = clamp(x, minX, maxX);
-    y = Math.min(y, maxY);
-    c.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
-    leaders.push({
-      from: eye.anchor(id, p),
-      to: { x: left ? x + w : x, y: y + h / 2 },
-      alpha: a,
-    });
-  }
-
-  eye.render(p, leaders);
-
-  let active = 0;
-  STAGES.forEach((s, i) => {
-    if (p >= s.from) active = i;
-  });
-  steps.forEach((li, i) => {
-    li.classList.toggle("is-active", i === active);
-    li.classList.toggle("is-done", i < active);
-  });
-  stepsList?.style.setProperty("--p", clamp(p / 0.95).toFixed(4));
-}
-
-if (video) {
-  video.pause();
-  video.addEventListener("loadedmetadata", updateHero);
-}
+const eyes = [...document.querySelectorAll("[data-eye-static]")].map(
+  (c) => new EyeRenderer(c, { tweezers: false, progress: Number(c.dataset.eyeStatic) })
+);
+const eyeRo = new ResizeObserver(() => eyes.forEach((e) => e.resize()));
+eyes.forEach((e) => eyeRo.observe(e.canvas));
 
 /* ---------- Прогресс секций (зачёркивание привычек) ---------- */
 
@@ -159,9 +73,6 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 
 const compare = document.querySelector("[data-compare]");
 if (compare) {
-  const statics = [...compare.querySelectorAll("[data-eye-static]")].map(
-    (c) => new EyeRenderer(c, { tweezers: false, progress: Number(c.dataset.eyeStatic) })
-  );
   const range = compare.querySelector("input[type=range]");
   const setSplit = (v) => {
     compare.style.setProperty("--split", `${v}%`);
@@ -182,8 +93,6 @@ if (compare) {
     setSplit(from);
     requestAnimationFrame(tick);
   });
-  const ro = new ResizeObserver(() => statics.forEach((s) => s.resize()));
-  statics.forEach((s) => ro.observe(s.canvas));
 }
 
 /* ---------- Форма записи ---------- */
@@ -279,9 +188,5 @@ const request = () => {
   }
 };
 window.addEventListener("scroll", request, { passive: true });
-window.addEventListener("resize", () => {
-  eye?.resize();
-  request();
-});
-if (eye) new ResizeObserver(() => { eye.resize(); request(); }).observe(canvas);
+window.addEventListener("resize", request);
 frame();
