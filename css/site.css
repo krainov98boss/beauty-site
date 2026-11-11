@@ -141,7 +141,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font: 400 1.55rem / 1 var(--font-display);
+  font: 700 1.2rem / 1 var(--font-display);
   color: var(--wine);
   text-decoration: none;
 }
@@ -283,7 +283,7 @@ html:not(.js) .hero__stage { position: relative; }
 }
 .callout.is-on { scale: 1; }
 .callout b {
-  font: 600 var(--fs-hand) / 1.05 var(--font-hand);
+  font: italic 600 var(--fs-hand) / 1.15 var(--font-hand);
   color: var(--wine);
 }
 .callout::before {
@@ -307,7 +307,7 @@ html:not(.js) .hero__stage { position: relative; }
   justify-content: center;
   gap: clamp(1rem, 2.5vw, 2.5rem);
   padding-top: 1rem;
-  font: 600 1.2rem / 1 var(--font-hand);
+  font: italic 600 0.84rem / 1 var(--font-hand);
   color: var(--ink-soft);
 }
 .hero__steps::before,
@@ -352,7 +352,7 @@ html:not(.js) .hero__stage { position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font: 600 1.25rem / 1 var(--font-hand);
+  font: italic 600 0.88rem / 1 var(--font-hand);
   color: var(--ink-soft);
   transition: opacity 0.4s;
 }
@@ -407,7 +407,7 @@ html:not(.js) .hero__hint { display: none; }
 }
 .habits__inner { --p: 0; }
 .habits__title {
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--wine);
   max-width: 11ch;
 }
@@ -435,7 +435,7 @@ html:not(.js) .hero__hint { display: none; }
 }
 .sticker__art { width: clamp(84px, 9vw, 120px); height: clamp(84px, 9vw, 120px); }
 .sticker__label {
-  font: 600 var(--fs-hand) / 1.1 var(--font-hand);
+  font: italic 600 var(--fs-hand) / 1.2 var(--font-hand);
   color: var(--ink);
   text-align: center;
 }
@@ -463,7 +463,7 @@ html.js .strike path {
 .habits__punch {
   margin-top: clamp(3.5rem, 7vw, 6rem);
   text-align: center;
-  font: 600 clamp(2.2rem, 1.6rem + 3vw, 4rem) / 1.05 var(--font-hand);
+  font: italic 700 clamp(1.7rem, 1.3rem + 2vw, 2.8rem) / 1.1 var(--font-hand);
   color: var(--rose);
 }
 html.js .habits__punch {
@@ -506,7 +506,7 @@ html.js .habits__punch {
   padding: 0.15em 0.6em 0.2em;
   background: var(--blush);
   border-radius: var(--radius-pill);
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--rose);
 }
 .effects__lead {
@@ -569,7 +569,7 @@ html.js .habits__punch {
 .polaroid__cap {
   display: grid;
   padding: 0.55rem 0.2rem 0.45rem;
-  font: 600 1.7rem / 1 var(--font-hand);
+  font: italic 600 1.19rem / 1 var(--font-hand);
   color: var(--wine);
 }
 .polaroid__cap small {
@@ -624,7 +624,7 @@ html.js .process:not(.is-in) .process__sheet { clip-path: inset(0 0 100% 0); }
 .process__title {
   position: relative;
   display: inline-block;
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--rose);
 }
 .process__heart {
@@ -680,7 +680,7 @@ html.js .process:not(.is-in) .ribbon path { stroke-dashoffset: 1; }
   filter: drop-shadow(0 3px 0 var(--paper)) drop-shadow(0 -3px 0 var(--paper));
 }
 .step__name {
-  font: 600 1.9rem / 1 var(--font-hand);
+  font: italic 600 1.33rem / 1 var(--font-hand);
   color: var(--wine);
 }
 .step p { font-size: 0.95rem; color: var(--ink-soft); max-width: 16ch; }
@@ -757,7 +757,7 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
     radial-gradient(70% 60% at 50% 35%, var(--paper), transparent),
     repeating-linear-gradient(90deg, var(--blush-light) 0 18px, var(--blush) 18px 36px);
   color: var(--wine);
-  font: 600 1.4rem / 1 var(--font-hand);
+  font: italic 600 0.98rem / 1 var(--font-hand);
 }
 .frame__photo svg { width: 3rem; height: 3rem; }
 .frame__border {
@@ -795,7 +795,7 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
   color: var(--rose);
 }
 .master__title {
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--wine);
 }
 .master__lead {
@@ -814,7 +814,7 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
   align-items: center;
   gap: 0.4rem;
   margin-top: var(--s-5);
-  font: 600 2rem / 1 var(--font-hand);
+  font: italic 600 1.4rem / 1 var(--font-hand);
   color: var(--rose);
   rotate: -4deg;
 }
@@ -836,7 +836,7 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
   overflow: hidden;
 }
 .prices__title {
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--wine);
   text-align: center;
 }
@@ -886,12 +886,12 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
 .folder--hit .folder__link { min-height: 18rem; background: var(--rose-deep); }
 .folder--hit .folder__hint,
 .folder--hit .folder__go { color: var(--on-wine); }
-.folder__name { font: 400 clamp(1.8rem, 1.3rem + 1vw, 2.3rem) / 1 var(--font-display); overflow-wrap: anywhere; }
+.folder__name { font: 700 clamp(1.3rem, 0.95rem + 0.8vw, 1.65rem) / 1.1 var(--font-display); overflow-wrap: normal; }
 .folder__hint { margin-top: 0.4rem; font-size: 0.92rem; color: var(--on-wine-soft); }
 .folder__price {
   margin-top: auto;
   padding-top: 1.5rem;
-  font: 600 1.6rem / 1 var(--font-hand);
+  font: italic 600 1.12rem / 1 var(--font-hand);
   border-top: 1px dashed var(--on-wine-soft);
 }
 .folder__go {
@@ -937,7 +937,7 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
   display: grid;
   justify-items: start;
   width: 10rem;
-  font: 600 1.55rem / 1.05 var(--font-hand);
+  font: italic 600 1.08rem / 1.05 var(--font-hand);
   color: var(--rose);
   text-align: left;
   rotate: 6deg;
@@ -954,10 +954,10 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
 @media (max-width: 1180px) { .compare__mark { display: none; } }
 .ba__inner { display: grid; justify-items: center; text-align: center; }
 .ba__title {
-  font: 400 var(--fs-h2) / 1 var(--font-display);
+  font: 700 var(--fs-h2) / 1.05 var(--font-display);
   color: var(--rose);
 }
-.ba__amp { font-family: var(--font-hand); font-weight: 600; color: var(--wine); font-size: 0.8em; }
+.ba__amp { font-family: var(--font-hand); font-style: italic; font-weight: 600; color: var(--wine); font-size: 0.8em; }
 .compare {
   position: relative;
   width: min(100%, 860px);
@@ -980,7 +980,7 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
 .compare__tag {
   position: absolute;
   top: 26%;
-  font: 600 1.7rem / 1 var(--font-hand);
+  font: italic 600 1.19rem / 1 var(--font-hand);
   color: var(--wine);
   pointer-events: none;
 }
@@ -1022,7 +1022,7 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
 .compare:has(.compare__range:focus-visible) { outline: 2px solid var(--rose); outline-offset: 4px; }
 .ba__note {
   margin-top: var(--s-4);
-  font: 600 1.25rem / 1.2 var(--font-hand);
+  font: italic 600 0.88rem / 1.2 var(--font-hand);
   color: var(--ink-soft);
 }
 
@@ -1049,7 +1049,7 @@ html.js .booking__confetti.is-in .deco { animation: fall-in 1.4s var(--ease-out)
   gap: clamp(2rem, 6vw, 6rem);
   align-items: center;
 }
-.booking__title { font: 400 var(--fs-h2) / 1 var(--font-display); color: var(--wine); }
+.booking__title { font: 700 var(--fs-h2) / 1.05 var(--font-display); color: var(--wine); }
 .booking__lead { margin-top: var(--s-3); font-size: var(--fs-lead); max-width: 26ch; }
 .booking__alt { display: grid; gap: 0.75rem; margin-top: var(--s-5); }
 .contact {
@@ -1165,7 +1165,7 @@ html.js .booking__confetti.is-in .deco { animation: fall-in 1.4s var(--ease-out)
   outline: none;
 }
 .form__done svg { width: 4.5rem; height: 4.5rem; color: var(--rose); animation: tie 0.9s var(--ease-out) both; }
-.form__done-title { font: 400 2.4rem / 1 var(--font-display); color: var(--wine); }
+.form__done-title { font: 700 2rem / 1.05 var(--font-display); color: var(--wine); }
 
 @media (max-width: 860px) {
   .booking__inner { grid-template-columns: 1fr; }
@@ -1194,7 +1194,7 @@ html.js .booking__confetti.is-in .deco { animation: fall-in 1.4s var(--ease-out)
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font: 400 1.6rem / 1 var(--font-display);
+  font: 700 1.3rem / 1 var(--font-display);
   text-decoration: none;
 }
 .footer__logo svg { width: 2rem; height: 1.5rem; color: var(--rose-soft); }
@@ -1220,6 +1220,159 @@ html.js .booking__confetti.is-in .deco { animation: fall-in 1.4s var(--ease-out)
 /* ---------- Схемы эффектов: зоны и пометки ---------- */
 
 .polaroid__img .map__zones line { stroke: var(--rose); stroke-width: 1.2; stroke-linecap: round; }
-.polaroid__img .map__zones text { font: 600 21px var(--font-hand); fill: var(--rose-deep); text-anchor: middle; }
-.polaroid__img .map__note { font: 600 26px var(--font-hand); fill: var(--wine); }
+.polaroid__img .map__zones text { font: italic 600 15px var(--font-hand); fill: var(--rose-deep); text-anchor: middle; }
+.polaroid__img .map__note { font: italic 600 17px var(--font-hand); fill: var(--wine); }
 .polaroid__img .map__arrow { fill: none; stroke: var(--wine); stroke-width: 1.3; stroke-dasharray: 3 3; stroke-linecap: round; }
+
+/* =========================================================
+   Стиль «кремовый лист на голубых полосах» (референс 2)
+   ========================================================= */
+
+.stripes-blue,
+.hero__stage {
+  background: repeating-linear-gradient(90deg, var(--blush) 0 44px, var(--stripe-blue) 44px 88px);
+}
+.hero__stage::before {
+  content: "";
+  position: absolute;
+  inset: 0 clamp(1rem, 7vw, 8rem);
+  background:
+    radial-gradient(55% 50% at 50% 64%, var(--paper) 0%, transparent 75%),
+    var(--blush);
+  box-shadow: 0 0 0 1px var(--stripe-pink);
+}
+.hero__title {
+  font-weight: 700;
+  font-size: clamp(2.4rem, 1.3rem + 3vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--wine);
+  max-width: 12.5em;
+}
+.hero__note {
+  margin-left: 0.2em;
+  padding: 0.12em 0.55em 0.2em;
+  font: italic 600 max(0.5em, 1.2rem) / 1 var(--font-display);
+  color: var(--on-wine);
+  background: var(--wine);
+  border-radius: var(--radius-pill);
+  transform: rotate(-3deg) translateY(-0.12em);
+}
+.hero__note::after { display: none; }
+
+.nav__mark {
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.55rem 0.4rem;
+  background: var(--stripe-blue);
+  border-radius: 50%;
+  color: var(--wine);
+}
+.footer__logo svg { width: 2.4rem; height: 2.4rem; padding: 0.5rem 0.35rem; background: var(--stripe-blue); border-radius: 50%; color: var(--wine); }
+.nav__logo { font: 700 1.2rem / 1 var(--font-display); }
+
+.btn { letter-spacing: 0.08em; font-weight: 600; }
+.btn--rose { --btn-bg: var(--paper); --btn-fg: var(--wine); border-color: var(--wine); box-shadow: none; }
+.btn--rose:hover { background: var(--stripe-blue); }
+
+.callout { border: 1.5px solid var(--stripe-blue); border-radius: 12px; }
+.callout::before,
+.callout[data-side="right"]::before { display: none; }
+.callout b { color: var(--wine); font-style: normal; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+
+.hero__steps { font: italic 600 0.95rem / 1 var(--font-display); }
+.hero__steps::before { background: var(--stripe-blue); }
+.hero__steps::after { background: var(--wine); }
+.hero__steps li::before { border-color: var(--stripe-blue); }
+.hero__steps li.is-done::before,
+.hero__steps li.is-active::before { background: var(--wine); border-color: var(--wine); }
+.hero__hint { font: italic 600 0.95rem / 1 var(--font-display); right: calc(clamp(1rem, 7vw, 8rem) + 1.25rem); }
+
+/* Привычки: голубые карточки с обводкой */
+.habits { background: var(--powder-light); }
+.sticker {
+  background: var(--paper);
+  border: 1.5px solid var(--stripe-blue);
+  outline: none;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+.sticker__label { font-size: 1.1rem; color: var(--wine); }
+.strike path { stroke: var(--wine); stroke-width: 5; }
+.habits__punch { color: var(--wine); }
+.habits__heart { color: var(--rose-soft); }
+
+/* Эффекты: кремовое поле, полароиды с розовыми бантами */
+.effects { background: var(--blush); }
+.effects__title,
+.effects__lead { background: none; padding: 0; }
+.effects__title { color: var(--wine); }
+.effects__lead { margin-top: var(--s-2); }
+.polaroid { border: 1.5px solid var(--stripe-pink); border-radius: 6px; }
+.polaroid::before,
+.polaroid:nth-child(even)::before { background: var(--stripe-blue); }
+.polaroid__img,
+.polaroid__img--butter { background: var(--powder-light); }
+.polaroid__img--blue { background: var(--blush-light); }
+.polaroid__cap { font-size: 1.15rem; }
+.polaroid__img .map__zones line { stroke: var(--sky); }
+.polaroid__img .map__zones text { fill: var(--wine); }
+
+/* Как проходит: кремовый лист на голубых полосах */
+.process { background: repeating-linear-gradient(90deg, var(--blush) 0 44px, var(--stripe-blue) 44px 88px); }
+.process__sheet { background: var(--blush-light); box-shadow: 0 0 0 1px var(--stripe-pink), var(--shadow-soft); }
+.process__title { color: var(--wine); }
+.process__heart { color: var(--rose-soft); }
+.ribbon path { stroke: var(--stripe-blue); }
+.step__name { font-size: 1.25rem; }
+
+/* Мастер: розовая рамка с золотом */
+.master { background: var(--blush); }
+.frame__photo {
+  background:
+    radial-gradient(70% 60% at 50% 35%, var(--paper), transparent),
+    var(--rose-soft);
+}
+.frame__border rect:first-of-type { stroke: var(--rose-soft); stroke-width: 9; }
+.frame::after { background: var(--stripe-blue); }
+.master__sign { color: var(--wine); font-size: 1.35rem; }
+.master__sign svg { color: var(--rose-soft); }
+
+/* Цены: бордовые папки на голубых полосах */
+.prices { background: repeating-linear-gradient(90deg, var(--blush) 0 44px, var(--stripe-blue) 44px 88px); }
+.prices__title {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.2em 0.8em 0.25em;
+  background: var(--blush);
+}
+.prices__note { width: fit-content; margin-inline: auto; padding: 0.2rem 0.8rem; background: var(--blush); }
+.folder__tab svg { color: var(--rose-soft); }
+.folder--hit .folder__link { background: var(--wine-deep); }
+.folder__price { font-size: 1.15rem; }
+
+/* До и после */
+.ba { background: var(--blush); }
+.ba__title { color: var(--wine); }
+.compare { border-color: var(--paper); box-shadow: var(--shadow-soft), 0 0 0 1.5px var(--stripe-blue); }
+.compare__handle svg { color: var(--wine); }
+.compare__mark { color: var(--wine); font-size: 1.1rem; }
+.compare__mark path { stroke: var(--wine); }
+
+/* Запись */
+.booking { background: var(--powder); }
+.edge--cloud path { fill: var(--powder); }
+.form { border: 1.5px solid var(--stripe-blue); border-radius: 18px; }
+.form::before { display: none; }
+.field input,
+.field select { background: var(--blush-light); border-color: var(--stripe-blue); border-radius: 10px; }
+.field input:focus,
+.field select:focus { border-color: var(--wine); box-shadow: 0 0 0 4px var(--powder-light); }
+.contact svg { background: var(--stripe-blue); color: var(--wine); }
+
+/* Стыки секций */
+.edge--wave path { fill: var(--blush); }
+
+@media (max-width: 760px) {
+  .hero__stage::before { inset: 0 0.6rem; }
+}

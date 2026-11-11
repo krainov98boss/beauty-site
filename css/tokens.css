@@ -1,76 +1,89 @@
 /* Все цвета, шрифты и отступы сайта. Литеральные цвета вне этого файла не используются. */
 
 @font-face {
-  font-family: "Oranienbaum";
-  src: url("../assets/fonts/oranienbaum-cyr.woff2") format("woff2");
-  font-display: swap;
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-@font-face {
-  font-family: "Oranienbaum";
-  src: url("../assets/fonts/oranienbaum-lat.woff2") format("woff2");
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Jost";
-  src: url("../assets/fonts/jost-cyr.woff2") format("woff2");
-  font-weight: 300 600;
-  font-display: swap;
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-@font-face {
-  font-family: "Jost";
-  src: url("../assets/fonts/jost-lat.woff2") format("woff2");
-  font-weight: 300 600;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Caveat";
-  src: url("../assets/fonts/caveat-cyr.woff2") format("woff2");
+  font-family: "Lora";
+  src: url("../assets/fonts/lora-cyr.woff2") format("woff2");
+  font-style: normal;
   font-weight: 400 700;
   font-display: swap;
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
 @font-face {
-  font-family: "Caveat";
-  src: url("../assets/fonts/caveat-lat.woff2") format("woff2");
+  font-family: "Lora";
+  src: url("../assets/fonts/lora-lat.woff2") format("woff2");
+  font-style: normal;
   font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/lora-it-cyr.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("../assets/fonts/lora-it-lat.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-cyr.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-lat.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
   /* Поля (розово-голубая основа) */
-  --blush: #f8dde4;
-  --blush-light: #fcecf0;
-  --powder: #dbe6f6;
-  --powder-light: #ebf1fb;
-  --lilac: #e5e3f7;
-  --cream: #fff8f2;
-  --paper: #fffdfb;
+  --blush: #fbf1e2;
+  --blush-light: #fff8ee;
+  --powder: #d6e5f5;
+  --powder-light: #e9f1fa;
+  --lilac: #e9f1fa;
+  --cream: #fff8ee;
+  --paper: #fffcf6;
 
   /* Полосы */
-  --stripe-pink: #f3c6d2;
-  --stripe-blue: #c3d5ef;
+  --stripe-pink: #ecdcc4;
+  --stripe-blue: #b7cfeb;
 
   /* Акценты */
-  --rose: #bf3d67;
-  --rose-deep: #a8345a;
-  --rose-soft: #f2a9be;
-  --wine: #6b1b2a;
-  --wine-deep: #4f111e;
-  --gold: #d6a24a;
+  --rose: #6e1d28;
+  --rose-deep: #5c1620;
+  --rose-soft: #efbcc6;
+  --wine: #6b1b26;
+  --wine-deep: #4e121b;
+  --gold: #d3a052;
   --gold-light: #efd29a;
-  --butter: #f5dc94;
-  --sky: #8fb0e3;
+  --butter: #f5ccd4;
+  --sky: #93b6e4;
 
   /* Текст */
-  --ink: #3b2a2e;
-  --ink-soft: #6c5056;
-  --on-wine: #fff2ea;
-  --on-wine-soft: #f1cfd3;
+  --ink: #3f2629;
+  --ink-soft: #6e5153;
+  --on-wine: #fff4ea;
+  --on-wine-soft: #f3d6d9;
 
   /* Иллюстрация глаза */
   --skin: #f6d6c9;
@@ -82,24 +95,24 @@
   --lash-dark: #141016;
 
   /* Тени */
-  --shadow-soft: 0 18px 40px -22px rgb(168 52 90 / 0.35);
+  --shadow-soft: 0 18px 40px -24px rgb(78 18 27 / 0.3);
   --shadow-card: 0 14px 30px -18px rgb(79 17 30 / 0.4);
   --shadow-lift: 0 26px 46px -24px rgb(79 17 30 / 0.45);
 
   /* Шрифты */
-  --font-display: "Oranienbaum", "Times New Roman", serif;
-  --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
-  --font-hand: "Caveat", "Segoe Print", cursive;
+  --font-display: "Lora", Georgia, serif;
+  --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-hand: "Lora", Georgia, serif;
 
   /* Шкала */
   --fs-display: clamp(3rem, 2rem + 4.6vw, 6rem);
-  --fs-h2: clamp(2.6rem, 1.9rem + 3vw, 4.5rem);
+  --fs-h2: clamp(2.1rem, 1.6rem + 2.2vw, 3.4rem);
   --fs-h3: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
   --fs-lead: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
   --fs-body: 1rem;
   --fs-small: 0.875rem;
   --fs-label: 0.78rem;
-  --fs-hand: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem);
+  --fs-hand: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
 
   /* Отступы (база 8) */
   --s-1: 0.25rem;
