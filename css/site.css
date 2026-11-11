@@ -697,10 +697,27 @@ html.js .process.is-in .step__bow { animation: tie 0.9s var(--ease-out) both; an
   100% { scale: 1; rotate: 0deg; }
 }
 
+.ribbon--v { display: none; }
+.ribbon--v path { stroke-dasharray: none; }
+html.js .ribbon--v { transition: clip-path 1.6s var(--ease-soft) 0.3s; clip-path: inset(0 0 0 0); }
+html.js .process:not(.is-in) .ribbon--v { clip-path: inset(0 0 100% 0); }
+html.js .process:not(.is-in) .ribbon--v path { stroke-dashoffset: 0; }
+
 @media (max-width: 760px) {
   .ribbon { display: none; }
-  .process__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.25rem; }
-  .step__bow { margin-top: 0; width: 3.4rem; height: 3.4rem; }
+  .ribbon--v { display: block; height: 100%; }
+  .process__steps { grid-template-columns: 1fr; }
+  .step {
+    width: 60%;
+    height: 10rem;
+    padding: 0;
+  }
+  .step:nth-child(odd) { justify-self: start; }
+  .step:nth-child(even) { justify-self: end; }
+  .step__bow { margin-top: 0; margin-bottom: 0.2rem; width: 3.4rem; height: 3.4rem; }
+  .step__name { font-size: 1.7rem; }
+  .step__name,
+  .step p { position: relative; background: var(--paper); border-radius: 6px; }
 }
 
 /* ---------- 5. Мастер ---------- */
@@ -808,6 +825,7 @@ html.js .frame:not(.is-in) { rotate: -16deg; translate: -2rem 2rem; opacity: 0; 
   .frame { justify-self: center; width: min(78vw, 340px); }
   .master__lead,
   .master__about { margin-inline: auto; }
+  .master .deco:nth-child(2) { display: none; }
 }
 
 /* ---------- 6. Цены ---------- */
@@ -925,11 +943,10 @@ html.js .folders.is-in .folder:hover { transition-delay: 0s; }
   rotate: 6deg;
 }
 .compare__mark svg {
-  width: 5rem;
-  height: 4rem;
-  margin-top: 0.3rem;
-  margin-left: -1rem;
-  rotate: 30deg;
+  width: 9rem;
+  height: 6rem;
+  margin-top: 0.2rem;
+  margin-left: -8rem;
   overflow: visible;
 }
 .compare__mark path { fill: none; stroke: var(--rose); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 4 5; }
